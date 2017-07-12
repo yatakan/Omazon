@@ -1,7 +1,7 @@
 lock '3.8.2'
 
 set :application, 'Omazon'
-set :repo_url,  'git@github.com:yatakan/https://github.com/yatakan/Omazon.git'
+set :repo_url,  'git@github.com:yatakan/Omazon.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
