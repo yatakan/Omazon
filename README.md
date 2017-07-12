@@ -1,5 +1,11 @@
 # README
 
+Konichiwa!
+
+Hoy estamos a siete de julio!
+
+Hace mucho calor en Shibuya.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
