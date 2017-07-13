@@ -4,6 +4,7 @@ header {
   width: 100%;
   #navbar {
     #nav-belt {
+      height: 35px;
       h1 {
         color: $page-main-white;
         font-size: 20px;
@@ -20,15 +21,28 @@ header {
         float: left;
         background-color: $page-main-white;
         border-radius: 10px;
-        width: 300px;
+        width: 700px;
         select {
-          width: 50px;
+          padding: 0 10px;
+          font-family: FontAwesome;
+          height: 35px;
+          width: 70px;
+          color: $page-main-font-option;
+          font-size: 12px;
+          line-height: 35px;
+          background-color: $page-main-option;
+          border-style: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
         }
         input {
-          width: 200px;
+          width: 600px;
+          border-style: none;
         }
         .search {
           font-size: 20px;
+          background-color: $page-main-search;
         }
       }
       .message-trial {
