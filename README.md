@@ -1,30 +1,74 @@
-# README
+# DB設計
+***
+## tables
+### items table
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| name             | string       | null: false, index: true                 |
+| price            | integer      | null: false                              |
+| stock            | integer      | null: false                              |
+| introduction     | text         | null: false                              |
+| category_id      | references   | null: false, foreign_key: true           |
+### Association
+* has_many :reviews
+* has_many :images
+* has_many :carts :through :shoppings
+* belongs_to :category
 
-Konichiwa!
+### categories tabale
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| name             | string       | null: false                              |
+### Association
+* has_many :items
 
-Hoy estamos a siete de julio!
+### carts tabals
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| name             | string       | null: false                              |
+| number           | integer      | null: false                              |
+| price            | integer      | null: false                              |
+| total            | integer      | null: false                              |
+| user_id          | references   | null: false, foreign_key: true           |
+### Association
+* has_many :items :through :shoppings
+* belongs_to :user
 
-Hace mucho calor en Shibuya.
+### shoppings tabale
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| item_id          | foreign_key  | null: false, foreign_key: true           |
+| order_id         | foreign_key  | null: false, foreign_key: true           |
+### Association
+* belongs_to :cart
+* belongs_to :item
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### reviews tabale
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| title            | string       | null: false                              |
+| text             | text         | null: false                              |
+| rate             | integer      | null: false                              |
+| user_id          | foreign_key  | null: false, foreign_key: true           |
+| like             | integer      |                                          |
+### Association
+* belongs_to :user
+* belongs_to :item
 
-Things you may want to cover:
+### users tabale
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| name             | string       | null: false                              |
+| tel              | string       | null: false                              |
+| address          | string       | null: falee                              |
+### Association
+* belongs_to :user
+* has_one :cart
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### images tabale
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| image            | string       | null: false                              |
+| item_id          | foreign_key  | null: false, foreign_key: true           |
+### Association
+* belongs_to :user
