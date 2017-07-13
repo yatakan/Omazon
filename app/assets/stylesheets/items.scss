@@ -1,3 +1,174 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  background-color: $page-main-color;
+  height: 100px;
+  width: 100%;
+  #navbar {
+    #nav-belt {
+      h1 {
+        color: $page-main-white;
+        font-size: 20px;
+        float: left;
+      }
+      p {
+        padding-top: 10px;
+        float: left;
+        color: $page-main-white;
+        font-size: 10px;
+        padding-right: 100px;
+      }
+      #nav-input {
+        float: left;
+        background-color: $page-main-white;
+        border-radius: 10px;
+        width: 300px;
+        select {
+          width: 50px;
+        }
+        input {
+          width: 200px;
+        }
+        .search {
+          font-size: 20px;
+        }
+      }
+      .message-trial {
+        float: right;
+      }
+      .free-trial {
+        float: right;
+      }
+    }
+    #nav-main {
+
+    }
+  }
+}
+
+#pageContents {
+  #slide {
+    width: 100%;
+    height: 300px;
+    background-color: $page-main-color;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.88, #ffa220), color-stop(0.00, #a2d93f));
+background: -webkit-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
+background: -moz-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
+background: -o-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
+background: -ms-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
+background: linear-gradient(to bottom, #a2d93f 0%, #ffa220 88%);
+    .text {
+      padding-top: 50px;
+      padding-left: 200px;
+      h2 {
+        color: $page-main-white;
+        font-size: 70px;
+      }
+      p {
+        color: $page-main-black;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $page-main-color;
+  width: 100%;
+  height: 500px;
+  #back-to-top {
+    height: 50px;
+    width: 100%;
+    background-color: $page-main-back-to-top;
+    p {
+      color: $page-main-white;
+      text-align: center;
+      font-size: 10px;
+      line-height: 50px;
+    }
+  }
+  #footer-nav {
+    background-color: $page-main-color;
+    border-bottom: solid 1px $page-main-border;
+    table {
+      margin: 0 auto;
+      tr {
+        float: left;
+        padding: 50px;
+        td {
+          div {
+            color: $page-main-white;
+            font-weight: bold;
+            font-size: 18px;
+          }
+          ul {
+            color: $page-main-white;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  #select-lang {
+    background-color: $page-main-color;
+    height: 80px;
+    .language {
+      padding-top: 30px;
+      margin: 0 auto;
+      width: 300px;
+      .logo {
+        p {
+          float: left;
+          color: $page-main-white;
+        }
+      }
+      .lang-field {
+        .select-lang {
+          padding-left: 50px;
+          float: left;
+          color: $page-main-white;
+          border-style: solid 1px;
+        }
+      }
+      .current-lang {
+        p {
+          padding-left: 10px;
+          float: left;
+          color: $page-main-white;
+        }
+      }
+    }
+  }
+  #about-amazon {
+    background-color: $page-main-footer;
+    height: 80px;
+    line-height: 80px;
+    table {
+      margin: 0 auto;
+      tr {
+        td {
+          div {
+            color: $page-main-white;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  #footer-bottom {
+    background-color: $page-main-footer;
+    height: 80px;
+    .element {
+      margin: 0 auto;
+      width: 600px;
+      .agreement {
+        float: left;
+        color: $page-main-white;
+        font-size: 12px;
+      }
+      .copyright {
+        padding-left: 10px;
+        float: left;
+        color: $page-main-copyright;
+        font-size: 12px;
+      }
+    }
+  }
+}
