@@ -79,6 +79,17 @@ header {
           color: $page-main-white;
           text-decoration: none;
         }
+        #user-controll {
+          &:hover {
+          border: solid 1px $item-page-pankuzu;
+          border-radius: 2px;
+          }
+          #dd-user-menu {
+            display: none;
+          }
+        }
+        #prime {
+        }
       }
     }
   }

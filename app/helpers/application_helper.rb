@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def user_controll
     if user_signed_in?
       current_user.name
@@ -6,4 +7,5 @@ module ApplicationHelper
       link_to "サインイン", new_user_session_path
     end
   end
+
 end

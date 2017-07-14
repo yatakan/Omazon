@@ -22,8 +22,10 @@
         %span マイストア タイムセール ギフト券 Amazonで売る ヘルプ
       %span#nav-user-menu
         %span JP &#xf0ac;
-        %span=user_controll
-        =fa_icon "sort-desc"
-        %span 今すぐプライムに登録！
-        %span 欲しいもの  &#xf0d7;
-        %span カート  &#xf0d7;
+        %span#user-controll
+          %span=user_controll
+          =fa_icon "sort-desc"
+          = render 'layouts/dd-user-menu'
+        %span#prime 今すぐプライムに登録！
+        %span#want 欲しいもの  &#xf0d7;
+        %span#cart カート  &#xf0d7;
