@@ -1,0 +1,28 @@
+= render 'navbar'
+#item-page
+  .pankuzu-list
+    %p 本 › 文学・評論 › 文芸作品
+  .center-col
+    .item-image
+      =image_tag "#{@item.image.image_url}"
+    .item-detail
+      .name= @item.name
+      .author
+      .review ★★★★★ 690件のカスタマーレビュー
+      .other &#xf0da; その他（）の形式およびエディションを表示する
+      .price
+        .type ペーパーバック
+        .best-price #{@item.price}円
+        %ul.price-list
+          %li ￥ 1 より 42 中古品の出品
+          %li ￥ 810 より 2 新品
+          %li ￥ 256 より 11 コレクター商品の出品
+        %p &#xf114; 不正確な製品情報を報告。
+  .introduction
+    .intro-box
+      %h2 商品の説明
+      %h3 内容紹介
+      %p= @item.introduction
+      %h3 内容（「BOOK」データベースより）
+      %p= @item.introduction
+      %p.more 商品の説明をすべて表示する
