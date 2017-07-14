@@ -1,14 +1,17 @@
 %header
   #navbar
     #nav-belt
-      %h1 Omazon
-      %p .co.jp
+      =link_to items_path do
+        %h1 Omazon
+        %p .co.jp
       #nav-input
         %select
           %option すべて &#xf0d7;
           %option 本
         %input
-        %search=fa_icon "search"
+        %search
+          =link_to items_search_path do
+            =fa_icon "search"
       %submit
       .free-trial
         %p 30日間の無料体験を試す

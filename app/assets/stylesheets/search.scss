@@ -1,0 +1,48 @@
+#contents-search {
+  #search-result {
+    font-family: FontAwesome;
+    padding: 20px;
+    ul {
+      li {
+        float: left;
+        padding-left: 20px;
+        .item-image {
+          padding-top: 20px;
+          width: 160px;
+          height: 160px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .item-detail {
+          padding-top: 80px;
+          font-size: 13px;
+          .name {
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .price {
+            .price-list {
+              li {
+                clear: both;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#contents-search:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}

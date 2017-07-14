@@ -1,0 +1,28 @@
+#sidebar {
+  font-family: FontAwesome;
+  float: left;
+  width: 200px;
+  height: 1000px;
+  border-right: solid 1px $page-nav-border;
+  h2 {
+    color: $page-sidebar-main;
+    font-size: 17px;
+    padding: 10px;
+  }
+  h3 {
+    font-size: 12px;
+    padding-left: 12px;
+  }
+  h4 {
+    font-size: 12px;
+    padding-left: 16px;
+    font-weight: bold;
+  }
+  ul {
+    li {
+      font-size: 12px;
+      padding-left: 20px;
+      padding-top: 5px;
+    }
+  }
+}
