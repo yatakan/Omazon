@@ -9,12 +9,21 @@
           %option すべて &#xf0d7;
           %option 本
         %input
-        %search
+        .search
           =link_to items_search_path do
-            =fa_icon "search"
+            =fa_icon "search",class:"search-icon"
       %submit
-      .free-trial
-        %p 30日間の無料体験を試す
-      .message-trial
-        %p 映画もドラマも見放題！
+      %span.free-trial
+        30日間の無料体験を試す<br>映画もドラマも見放題！
     #nav-main
+      %span#nav-category
+        %span カテゴリー &#xf0dd;
+      %span#nav-menu
+        %span マイストア タイムセール ギフト券 Amazonで売る ヘルプ
+      %span#nav-user-menu
+        %span JP &#xf0ac;
+        %span=user_controll
+        =fa_icon "sort-desc"
+        %span 今すぐプライムに登録！
+        %span 欲しいもの  &#xf0d7;
+        %span カート  &#xf0d7;
