@@ -8,6 +8,10 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.where('name LIKE(?)',"%#{params[:keyword]}%")
+    if params[:category].present?
+      @items = Item.where('name LIKE(?)',"%#{params[:keyword]}%").where(category_id:"#{params[:category]}")
+    else
+      @items = Item.where('name LIKE(?)',"%#{params[:keyword]}%")
+    end
   end
 end
