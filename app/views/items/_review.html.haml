@@ -1,0 +1,14 @@
+#item-review
+  #review
+    %h1 カスタマーレビュー
+  #review-rates
+    %p 5つ星のうち 4.2
+  #customer-review
+    %ul
+      - @reviews.each do |review|
+        %li
+          %p ★★★☆☆
+          %p= review.title
+          %p 投稿者#{review.user.name}
+          %p 形式: ペーパーバック Amazonで購入
+          %p= simple_format(review.text)

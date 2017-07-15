@@ -49,8 +49,9 @@
 | title            | string       | null: false                              |
 | text             | text         | null: false                              |
 | rate             | integer      | null: false                              |
-| user_id          | foreign_key  | null: false, foreign_key: true           |
 | like             | integer      |                                          |
+| user_id          | references  | null: false, foreign_key: true            |
+| item_id          | references  | null: false, foreign_key: true            |
 ### Association
 * belongs_to :user
 * belongs_to :item
