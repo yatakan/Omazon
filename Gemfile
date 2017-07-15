@@ -69,5 +69,3 @@ end
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
-gem 'solidus'
-gem 'solidus_auth_devise'
