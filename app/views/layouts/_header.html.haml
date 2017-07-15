@@ -1,18 +1,17 @@
 %header
   #navbar
     #nav-belt
-      =link_to items_path do
+      = link_to items_path do
         %h1 Omazon
         %p .co.jp
-      #nav-input
-        %select
-          %option すべて &#xf0d7;
-          %option 本
-        %input
-        .search
-          =link_to items_search_path do
-            =fa_icon "search",class:"search-icon"
-      %submit
+      = form_tag search_items_path, method: :get do
+        #nav-input
+          = select_tag :category, options_from_collection_for_select(Category.all, :id, :name), prompt:"すべてのカテゴリー"
+          .input
+            = text_field_tag :keyword
+          .search
+            =fa_icon "search", class:"search-icon"
+        = submit_tag '', class:"submit"
       %span.free-trial
         30日間の無料体験を試す<br>映画もドラマも見放題！
     #nav-main
@@ -21,11 +20,11 @@
       %span#nav-menu
         %span マイストア タイムセール ギフト券 Amazonで売る ヘルプ
       %span#nav-user-menu
-        %span JP &#xf0ac;
+        %span.country JP &#xf0ac;
         %span#user-controll
           %span=user_controll
-          =fa_icon "sort-desc"
-          = render 'layouts/dd-user-menu'
+          = fa_icon "sort-desc"
+          = dd_user_menu
         %span#prime 今すぐプライムに登録！
         %span#want 欲しいもの  &#xf0d7;
         %span#cart カート  &#xf0d7;

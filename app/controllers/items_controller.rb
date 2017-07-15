@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+    @categories = Category.all
   end
 
   def show
@@ -7,6 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.all
+    @items = Item.where('name LIKE(?)',"%#{params[:keyword]}%")
   end
 end

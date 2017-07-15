@@ -1,6 +1,6 @@
 header {
   background-color: $page-main-color;
-  height: 100px;
+  height: 200px;
   width: 100%;
 
   #navbar {
@@ -26,7 +26,6 @@ header {
         width: 700px;
         select {
           padding: 0 10px;
-          font-family: FontAwesome;
           height: 35px;
           width: 70px;
           color: $page-main-font-option;
@@ -39,7 +38,9 @@ header {
           appearance: none;
         }
         input {
-          width: 580px;
+          padding-left: 10px;
+          height: 35px;
+          width: 300px;
           border-style: none;
         }
         .search {
@@ -66,7 +67,7 @@ header {
     #nav-main {
       color: white;
       width: 100%;
-      height: 50px;
+      height: 100px;
       #nav-category {
         float: left;
       }
@@ -75,17 +76,31 @@ header {
       #nav-user-menu {
         float: right;
         margin-bottom: 50px;
-        a {
-          color: $page-main-white;
-          text-decoration: none;
+        display: inline;
+        .country {
+          float: left;
         }
         #user-controll {
+          float: left;
+          padding-bottom: 1px;
+          border: solid 1px $page-main-color;
+          .none-decoration {
+            text-decoration: none;
+            color: $page-main-white;
+            }
           &:hover {
           border: solid 1px $item-page-pankuzu;
           border-radius: 2px;
+          #dd-user-menu{
+            display: inline;
+          }
           }
           #dd-user-menu {
+            position: absolute;
             display: none;
+            font-size: 13px;
+            background-color: $page-main-white;
+            color: $page-main-black;
           }
         }
         #prime {
