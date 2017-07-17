@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @reviews = Review.all
+    @reviews = @item.reviews
   end
 
   def search

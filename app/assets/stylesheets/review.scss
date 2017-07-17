@@ -1,5 +1,6 @@
 #item-review {
   padding: 50px;
+  height: 100px;
   #review {
 
   }
@@ -10,7 +11,19 @@
     ul {
       li {
         padding-top: 50px;
+        padding-bottom: 50px;
       }
     }
+  }
+}
+
+#review-form {
+  h1 {
+    padding: 50px;
+  }
+  input {
+    width: 200px;
+    height: 300px;
+    padding-top: 50px;
   }
 }

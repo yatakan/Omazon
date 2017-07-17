@@ -1,15 +1,10 @@
-.center-col:after {
-  content: "";
-  clear:both;
-  display: block;
-}
-
 #item-page {
-  .pankuzu-list
+  .pankuzu-list {
     p{
       color: $item-page-pankuzu;
       font-size: 13px;
     }
+  }
   .center-col {
     .item-image {
       margin: 20px;

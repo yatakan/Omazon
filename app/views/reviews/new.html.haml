@@ -1,0 +1,10 @@
+#review-form
+  %h1 レビューを書く
+  = form_for([@item, @review]) do |f|
+    = f.label :title
+    = f.text_field :title
+    = f.label :text
+    = f.text_field :text
+    = f.label :rate
+    = f.text_field :rate
+    = f.submit
