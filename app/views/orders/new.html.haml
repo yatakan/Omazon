@@ -1,0 +1,10 @@
+#order-new
+  = form_for @order do |f|
+    #order-adress
+      = render 'address'
+    #order-option
+      = render 'option'
+    #order-paytype
+      = render 'pay_type'
+    #order-decision
+      = f.submit

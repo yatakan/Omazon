@@ -39,6 +39,7 @@
 | column           | Type         | Options                                  |
 |:-----------------|:-------------|:-----------------------------------------|
 | user_id          | references   | null: false, foreign_key: true           |
+| adrress_id       | references   | null: false, foreign_key: true
 | pay_type         | integer      | null: false
 | check_out        | boolean      | null: false
 ### Association
@@ -65,7 +66,19 @@
 | address          | string       | null: falee                              |
 ### Association
 * belongs_to :user
-* has_many :shoppings
+* has_many :carts
+* has_many :orders
+* has_many :address
+
+### address tables
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| name             | string       | null: false                              |
+| postal_code      | string       | null: false                              |
+| address          | string       | null: falee                              |
+| tel              | integer      | null: false
+### Association
+* belongs_to :user
 
 ### images tabale
 | column           | Type         | Options                                  |
