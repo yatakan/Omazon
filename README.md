@@ -44,6 +44,7 @@
 | check_out        | boolean      | null: false
 ### Association
 * belongs_to :user
+* belongs_to :address
 
 ### reviews tabale
 | column           | Type         | Options                                  |
@@ -79,6 +80,8 @@
 | tel              | integer      | null: false
 ### Association
 * belongs_to :user
+* belongs_to :order
+* has_many: orders
 
 ### images tabale
 | column           | Type         | Options                                  |
