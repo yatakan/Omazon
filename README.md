@@ -12,8 +12,9 @@
 ### Association
 * has_many :reviews
 * has_many :images
-* has_many :carts :through :shoppings
+: has_many :shoppings
 * belongs_to :category
+
 
 ### categories tabale
 | column           | Type         | Options                                  |
@@ -25,23 +26,23 @@
 ### carts tabals
 | column           | Type         | Options                                  |
 |:-----------------|:-------------|:-----------------------------------------|
-| name             | string       | null: false                              |
 | number           | integer      | null: false                              |
-| price            | integer      | null: false                              |
-| total            | integer      | null: false                              |
 | user_id          | references   | null: false, foreign_key: true           |
+| item_id          | references   | null: false, foreign_key: true           |
+| order_id         | referencds   | foreign_key: true
 ### Association
-* has_many :items :through :shoppings
 * belongs_to :user
+* belongs_to :item
+* belongs_to :order
 
-### shoppings tabale
+### orders tabals
 | column           | Type         | Options                                  |
 |:-----------------|:-------------|:-----------------------------------------|
-| item_id          | foreign_key  | null: false, foreign_key: true           |
-| order_id         | foreign_key  | null: false, foreign_key: true           |
+| user_id          | references   | null: false, foreign_key: true           |
+| pay_type         | integer      | null: false
+| check_out        | boolean      | null: false
 ### Association
-* belongs_to :cart
-* belongs_to :item
+* belongs_to :user
 
 ### reviews tabale
 | column           | Type         | Options                                  |
@@ -64,7 +65,7 @@
 | address          | string       | null: falee                              |
 ### Association
 * belongs_to :user
-* has_one :cart
+* has_many :shoppings
 
 ### images tabale
 | column           | Type         | Options                                  |
