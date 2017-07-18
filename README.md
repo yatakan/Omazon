@@ -39,6 +39,7 @@
 | column           | Type         | Options                                  |
 |:-----------------|:-------------|:-----------------------------------------|
 | user_id          | references   | null: false, foreign_key: true           |
+| adrress_id       | references   | null: false, foreign_key: true
 | pay_type         | integer      | null: false
 | check_out        | boolean      | null: false
 ### Association
@@ -66,7 +67,6 @@
 | address          | string       | null: falee                              |
 ### Association
 * belongs_to :user
-<<<<<<< HEAD
 * has_many :carts
 * has_many :orders
 * has_many :address
@@ -82,9 +82,6 @@
 * belongs_to :user
 * belongs_to :order
 * has_many: orders
-=======
-* has_many :shoppings
->>>>>>> parent of b996c21... 注文機能
 
 ### images tabale
 | column           | Type         | Options                                  |

@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170717110439) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -24,9 +23,6 @@ ActiveRecord::Schema.define(version: 20170717110439) do
     t.index ["order_id"], name: "index_addresses_on_order_id", using: :btree
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
-=======
-ActiveRecord::Schema.define(version: 20170717043623) do
->>>>>>> parent of b996c21... 注文機能
 
   create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "number",     null: false
@@ -63,7 +59,6 @@ ActiveRecord::Schema.define(version: 20170717043623) do
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
   end
 
-<<<<<<< HEAD
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                    null: false
     t.integer  "pay_type",                   null: false
@@ -75,8 +70,6 @@ ActiveRecord::Schema.define(version: 20170717043623) do
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
-=======
->>>>>>> parent of b996c21... 注文機能
   create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                                null: false
     t.text     "text",       limit: 65535,             null: false
@@ -112,10 +105,7 @@ ActiveRecord::Schema.define(version: 20170717043623) do
   add_foreign_key "carts", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
-<<<<<<< HEAD
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "users"
-=======
->>>>>>> parent of b996c21... 注文機能
   add_foreign_key "reviews", "users"
 end
