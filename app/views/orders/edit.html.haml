@@ -5,4 +5,8 @@ Amazonマーケットプレイスの商品をご注文された場合、お客�
 
 Amazonマーケットプレイスの商品を購入する場合は、所定の配送料がかかります。「注文を確定する」ボタンをクリックする前に、配送料と注文合計をご確認ください。`
 
-=render 'carts/cart'
+= render 'form'
+
+= render 'carts/cart'
+
+=link_to '注文を確定', "/orders/#{@order.id}", method: :patch
