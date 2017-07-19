@@ -1,7 +1,7 @@
 #sidebar
   %h2 カテゴリ
-  %h3 &#xf104; 本
+  %h3 本
   %h4 文学・評論
   %ul
-    %li 英米文学
-    %li スペイン文学
+    - @categories.each do|category|
+      %li=link_to category.name, category_path(category)
