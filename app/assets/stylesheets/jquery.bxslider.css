@@ -4,8 +4,8 @@
 ===================================*/
 .bx-wrapper {
   position: relative;
-  margin-bottom: 60px;
   padding: 0;
+  margin: 0;
   *zoom: 1;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
@@ -28,16 +28,13 @@ ul.bxslider {
 /** THEME
 ===================================*/
 .bx-wrapper {
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px #ccc;
-  box-shadow: 0 0 5px #ccc;
-  border: 5px solid #fff;
-  background: #fff;
+  background: #232f3e;
+  margin: 0;
+  padding: 0;
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
-  bottom: -30px;
   width: 100%;
 }
 /* LOADER */
@@ -58,7 +55,6 @@ ul.bxslider {
   font-family: Arial;
   font-weight: bold;
   color: #666;
-  padding-top: 20px;
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #666;
@@ -66,7 +62,6 @@ ul.bxslider {
   display: block;
   width: 10px;
   height: 10px;
-  margin: 0 5px;
   outline: 0;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -108,7 +103,6 @@ ul.bxslider {
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
-  margin-top: -16px;
   outline: 0;
   width: 32px;
   height: 32px;
@@ -129,7 +123,6 @@ ul.bxslider {
   height: 11px;
   outline: 0;
   background: url('images/controls.png') -86px -11px no-repeat;
-  margin: 0 3px;
 }
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active,
@@ -143,7 +136,6 @@ ul.bxslider {
   height: 11px;
   outline: 0;
   background: url('images/controls.png') -86px -44px no-repeat;
-  margin: 0 3px;
 }
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active,
@@ -173,5 +165,4 @@ ul.bxslider {
   font-family: Arial;
   display: block;
   font-size: .85em;
-  padding: 10px;
 }

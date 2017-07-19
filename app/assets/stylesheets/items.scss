@@ -1,24 +1,12 @@
 #pageContents {
-  #slide {
-    width: 100%;
-    height: 300px;
-    background-color: $page-main-color;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.88, #ffa220), color-stop(0.00, #a2d93f));
-background: -webkit-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
-background: -moz-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
-background: -o-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
-background: -ms-linear-gradient(top, #a2d93f 0%, #ffa220 88%);
-background: linear-gradient(to bottom, #a2d93f 0%, #ffa220 88%);
-    .text {
-      padding-top: 50px;
-      padding-left: 200px;
-      h2 {
-        color: $page-main-white;
-        font-size: 70px;
-      }
-      p {
-        color: $page-main-black;
-      }
+  margin: 0;
+  padding: 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin:0;
+      padding:0;
     }
   }
 }

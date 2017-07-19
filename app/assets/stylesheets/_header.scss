@@ -24,7 +24,13 @@ header {
         background-color: $page-main-white;
         border-radius: 4px;
         width: 700px;
+        height: 35px;
+        form {
+          float: left;
+          width: 10px;
+        }
         select {
+          float: left;
           padding: 0 10px;
           height: 35px;
           width: 70px;
@@ -38,30 +44,25 @@ header {
           appearance: none;
         }
         input {
+          float: left;
           padding-left: 10px;
           height: 35px;
-          width: 300px;
+          width: 500px;
           border-style: none;
         }
-        .search {
+        .submit {
           float: right;
           height: 35px;
+          width: 50px;
           border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
           background-color: $page-main-search;
-          .search-icon {
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 14px;
-            color: #111;
-            line-height: 35px;
-          }
+          padding-left: 10px;
+          padding-right: 10px;
+          font-size: 14px;
+          color: #111;
+          line-height: 35px;
         }
-      }
-      .free-trial {
-        float: right;
-        color: $page-main-white;
-        font-size: 10px;
       }
     }
     #nav-main {
@@ -70,8 +71,19 @@ header {
       height: 100px;
       #nav-category {
         float: left;
+        &:hover {
+          #dd-category-menu {
+            display: inline;
+            position: absolute;
+            background-color: $page-main-white;
+          }
+        }
+        #dd-category-menu {
+          display: none;
+        }
       }
       #nav-menu {
+        padding-left: 5px;
       }
       #nav-user-menu {
         float: right;
@@ -91,9 +103,10 @@ header {
           &:hover {
           border: solid 1px $item-page-pankuzu;
           border-radius: 2px;
-          #dd-user-menu{
-            display: inline;
-          }
+            #dd-user-menu{
+              display: inline;
+              z-index: 5000;
+            }
           }
           #dd-user-menu {
             position: absolute;
