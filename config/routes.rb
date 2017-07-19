@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   get 'carts/index' => 'carts#index'
-  resources :categories,only: [:index]
+  resources :categories,only: [:index, :show]
   resources :items, only: [:index, :show] do
     resources :reviews
     resources :carts, only: [:create]
