@@ -2,16 +2,17 @@ class CartsController < ApplicationController
   before_action :setup_cart_item!, only: [:add_item, :update_item, :delete_item]
 
   def show
-    @shopping = current_cart.shoppings
+    @shoppings  = current_cart.shoppings
   end
 
   def add_item
     if @shopping.blank?
-      @shopping = current_cart.shoppings.build(product_id: params[:product_id])
+      @shopping = current_cart.shoppings.new(item_id: params[:item_id], quantity: 1)
     end
-    @shopping.quantity += params[:quantity].to_i
+    @shopping.quantity += 1
+    # @shopping.quantity += params[:quantity].to_i
     @shopping.save
-    redirect_to current_cart
+    redirect_to item_path(params[:item_id])
   end
 
   def update_item
@@ -26,6 +27,7 @@ class CartsController < ApplicationController
 
   private
   def setup_cart_item!
-    @cart_item = current_cart.shoppings.find_by(prodcut_id: params[:product_id])
+    current_cart if session[:cart_id].nil?
+    @shopping = current_cart.shoppings.find_by(item_id: params[:item_id])
   end
 end

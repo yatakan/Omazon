@@ -20,7 +20,7 @@
         %p &#xf114; 不正確な製品情報を報告。
     .add-cart
       .add-button
-        %p= link_to 'カートに入れる', "/add_item", method: :post
+        %p= link_to 'カートに入れる', "/add_item/#{@item.id}", method: :post
   .introduction
     .intro-box
       %h2 商品の説明

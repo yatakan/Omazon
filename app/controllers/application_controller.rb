@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   before_action :get_categories
   helper_method :current_cart
 
+  def current_cart
+    if session[:cart_id]
+      @cart = Cart.find(session[:cart_id])
+    else
+      @cart = Cart.create
+      session[:cart_id] = @cart.id
+    end
+  end
 
   private
   def configure_permitted_parameters
@@ -12,14 +20,5 @@ class ApplicationController < ActionController::Base
 
   def get_categories
     @categories = Category.all
-  end
-
-  def current_cart
-    if session[:cart_id]
-      @cart = Cart.find(session[:cart_id])
-    else
-      @cart = Cart.create
-      session[:cart_id] = @cart.id
-    end
   end
 end

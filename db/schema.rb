@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720051441) do
+ActiveRecord::Schema.define(version: 20170720132403) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -88,11 +88,11 @@ ActiveRecord::Schema.define(version: 20170720051441) do
   end
 
   create_table "shoppings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "item_id",    null: false
-    t.integer  "cart_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "quantity"
+    t.integer  "item_id",                null: false
+    t.integer  "cart_id",                null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "quantity",   default: 0, null: false
     t.index ["cart_id"], name: "index_shoppings_on_cart_id", using: :btree
     t.index ["item_id"], name: "index_shoppings_on_item_id", using: :btree
   end
