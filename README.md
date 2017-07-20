@@ -28,12 +28,22 @@
 |:-----------------|:-------------|:-----------------------------------------|
 | number           | integer      | null: false                              |
 | user_id          | references   | null: false, foreign_key: true           |
-| item_id          | references   | null: false, foreign_key: true           |
 | order_id         | referencds   | foreign_key: true
 ### Association
 * belongs_to :user
-* belongs_to :item
 * belongs_to :order
+* has_many :items :through :cart_item
+
+### shoppings
+| column           | Type         | Options                                  |
+|:-----------------|:-------------|:-----------------------------------------|
+| number           | integer      | null: false                              |
+| item_id          | references   | null: false, foreign_key: true           |
+| cart_id          | references   | null: false, foreign_key: true
+### Association
+* belongs_to :cart
+* belongs_to :item
+* ha_many :carts :through :shoppings
 
 ### orders tabals
 | column           | Type         | Options                                  |

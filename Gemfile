@@ -69,3 +69,4 @@ end
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'activerecord-session_store'
