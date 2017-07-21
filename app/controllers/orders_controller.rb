@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
     @order = Order.new
     @addresses = current_user.addresses
   end
+
   def create
     @id = Order.create(order_params)
     redirect_to edit_order_path(@id)
@@ -13,12 +14,16 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
-    @carts = Cart.where(user_id: current_user.id)
-    if @carts.present?
+    @shoppings  = current_cart.shoppings
+    if @shoppings.present?
       @sum = 0
-      @carts.each do |cart|
-        @sum += (cart.item.price * cart.number)
+      @shoppings.each do |cart|
+        @sum += (cart.item.price * cart.quantity)
       end
+    end
+    @numbers = []
+    for num in 1..10 do
+      @numbers << num
     end
   end
 

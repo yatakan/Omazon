@@ -18,11 +18,12 @@ class CartsController < ApplicationController
   def add_item
     if @shopping.blank?
       @shopping = current_cart.shoppings.new(item_id: params[:item_id], quantity: 1)
+    else
+      @shopping.quantity += 1
+      # @shopping.quantity += params[:quantity].to_i
     end
-    @shopping.quantity += 1
-    # @shopping.quantity += params[:quantity].to_i
     @shopping.save
-    redirect_to item_path(params[:item_id])
+    redirect_to current_cart
   end
 
   def update_item
