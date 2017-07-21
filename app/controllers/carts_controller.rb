@@ -3,6 +3,16 @@ class CartsController < ApplicationController
 
   def show
     @shoppings  = current_cart.shoppings
+    if @shoppings.present?
+      @sum = 0
+      @shoppings.each do |cart|
+        @sum += (cart.item.price * cart.quantity)
+      end
+    end
+    @numbers = []
+    for num in 1..10 do
+      @numbers << num
+    end
   end
 
   def add_item
@@ -16,7 +26,7 @@ class CartsController < ApplicationController
   end
 
   def update_item
-    @shopping.update(quantity: params[:quantity].to_i)
+    @shopping.update(shopping_params)
     redirect_to current_cart
   end
 
@@ -29,5 +39,9 @@ class CartsController < ApplicationController
   def setup_cart_item!
     current_cart if session[:cart_id].nil?
     @shopping = current_cart.shoppings.find_by(item_id: params[:item_id])
+  end
+
+  def shopping_params
+    params.require(:shopping).permit(:quantity)
   end
 end

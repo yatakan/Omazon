@@ -20,4 +20,4 @@
           = fa_icon "sort-desc"
           = dd_user_menu
         %span#cart
-          = link_to 'カート', ""
+          = link_to 'カート', cart_path(session[:cart_id])
