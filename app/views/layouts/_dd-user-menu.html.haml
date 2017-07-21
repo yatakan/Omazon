@@ -1,3 +1,5 @@
 #dd-user-menu
   %ul
-    %li= link_to("サインアウト", destroy_user_session_path, method: :delete)
+    %li= link_to "マイページ",
+      user_path(current_user)
+    %li= link_to "サインアウト", destroy_user_session_path, method: :delete

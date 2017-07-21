@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :carts
-  resources :categories,only: [:index, :show]
+  resources :categories, only: [:index, :show]
   resources :orders
-
+  resources :addresses, only: [:index, :new,:create, :edit, :update, :destroy]
+  resources :users, only: [:show]
   resources :items, only: [:index, :show] do
     resources :reviews
     collection do
       get 'search'
     end
   end
-
 
   post '/add_item/:item_id' => 'carts#add_item'
   post '/update_item/:item_id' => 'carts#update_item'

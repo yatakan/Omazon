@@ -1,0 +1,10 @@
+%ul
+  - if @addresses.present?
+    - @addresses.each.with_index do |address, i|
+      %li 登録住所：#{i}
+      %li 電話番号：#{address.tel}
+      %li 住所：#{address.address}
+      = link_to 'この住所を編集する', edit_address_path(address)
+      = link_to 'この住所を削除する', "/addresses/#{address.id}", method: :delete, data: { confirm:"本当に削除しますか?" }
+  - else
+    %li まだ住所は登録されていません。

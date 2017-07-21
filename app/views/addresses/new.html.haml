@@ -1,0 +1,9 @@
+%p お届け先情報入力
+= form_for @address do |f|
+  = f.label :name
+  = f.text_field :name, placeholder:"名前を入力してください"
+  = f.label :tel
+  = f.text_field :tel, placeholder:"電話番号を入力してください"
+  = f.label :address
+  = f.text_field :address, placeholder:"住所を入力してください"
+  = f.submit
