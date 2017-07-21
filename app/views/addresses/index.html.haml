@@ -1,4 +1,5 @@
 %ul
+  %li= link_to '新しい住所を登録する。', new_address_path
   - if @addresses.present?
     - @addresses.each.with_index do |address, i|
       %li 登録住所：#{i}

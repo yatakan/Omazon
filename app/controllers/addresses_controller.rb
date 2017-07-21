@@ -25,7 +25,7 @@ class AddressesController < ApplicationController
 
   def destroy
     find_address
-    @address.destroy
+    @address.update(user_id: nil, destroy_at: Time.now)
     redirect_to_index
   end
 
