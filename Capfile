@@ -1,7 +1,7 @@
-require 'capistrano/rails/console'
-
 require "capistrano/setup"
 require "capistrano/deploy"
+
+require 'capistrano/rails/console'
 
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
