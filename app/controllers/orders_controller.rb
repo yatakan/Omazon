@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+
   def index
   end
 
@@ -15,6 +16,7 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    @address = @order.address
     @shoppings  = current_cart.shoppings
     if @shoppings.present?
       @sum = 0
@@ -22,18 +24,18 @@ class OrdersController < ApplicationController
         @sum += (cart.item.price * cart.quantity)
       end
     end
-    @numbers = []
-    for num in 1..10 do
-      @numbers << num
-    end
   end
 
   def update
+    @user = current_user
     @order = Order.find(params[:id])
+    OrderMailer.order_mail_to_user(@user, @order).deliver
+    session[:cart_id] = nil
+    current_cart
   end
 
   private
   def order_params
-    params.require(:order).permit(:address_id, :pay_type).merge(user_id: current_user.id)
+    params.require(:order).permit(:address_id, :pay_type).merge(user_id: current_user.id, cart_id: current_cart.id)
   end
 end
