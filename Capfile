@@ -1,3 +1,5 @@
+require 'capistrano/rails/console'
+
 require "capistrano/setup"
 require "capistrano/deploy"
 
