@@ -18,18 +18,16 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @address = @order.address
     @shoppings  = current_cart.shoppings
-    if @shoppings.present?
-      @sum = 0
-      @shoppings.each do |cart|
-        @sum += (cart.item.price * cart.quantity)
-      end
-    end
+    @sum = calc_sum(@shoppings)
   end
 
   def update
     @user = current_user
     @order = Order.find(params[:id])
-    OrderMailer.order_mail_to_user(@user, @order).deliver
+    @shoppings = @order.cart.shoppings
+    @sum = calc_sum(@shoppings)
+    OrderMailer.order_mail_to_user(@user, @order, @shoppings, @sum).deliver
+    OrderMailer.order_mail_to_owner(@user, @order, @shoppings, @sum).deliver
     session[:cart_id] = nil
     current_cart
   end
@@ -37,5 +35,15 @@ class OrdersController < ApplicationController
   private
   def order_params
     params.require(:order).permit(:address_id, :pay_type).merge(user_id: current_user.id, cart_id: current_cart.id)
+  end
+
+  def calc_sum(shoppings)
+    if shoppings.present?
+      sum = 0
+      shoppings.each do |shopping|
+        sum += (shopping.item.price * shopping.quantity).to_i
+      end
+      return sum
+    end
   end
 end

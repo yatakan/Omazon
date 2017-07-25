@@ -1,0 +1,21 @@
+%head
+  %style table { border: solid 1px ; padding: 10px ; }
+  %style tr { border: solid 1px ; }
+%p ご注文ありがとうございます。
+
+#cart-show
+  %caption ご注文内容
+  %table
+    %tr
+      %th
+      %th
+      %th 価格
+      %th 数量
+    - @shoppings.each do |shopping|
+      %tr
+        %td#cart-image= image_tag(shopping.item.image.image_url)
+        %td#cart-item= shopping.item.name
+        %td#cart-price= shopping.item.price
+        %td#cart-quantity= shopping.quantity
+  %p.price-sum ご請求金額
+  %p= @sum

@@ -1,0 +1,15 @@
+#cart-show
+  %caption ご注文内容
+  %table
+    %tr
+      %th
+      %th
+      %th 価格
+      %th 数量
+    - @shoppings.each do |shopping|
+      %tr
+        %td#cart-image= link_to image_tag("#{shopping.item.image.image_url}"), item_path(shopping.item)
+        %td#cart-item= link_to shopping.item.name,item_path(shopping.item)
+        %td#cart-price= shopping.item.price
+        %td#cart-quantity= shopping.quantity
+  %p.price-sum 小計 #{@sum}
