@@ -8,13 +8,24 @@ class ItemsController < ApplicationController
     @reviews = @item.reviews
     if @reviews.present?
       @count = @reviews.group(:rate).order('rate DESC').count
-      @count_keys = @count.keys
-      @count_values = @count.values
+      for i in 1..5
+        if @count[i].nil?
+          @count[i] = 0
+        end
+      end
+      @count_sort = {}
+      5.step(1, -1) do |i|
+        @count_sort[i] = @count[i]
+      end
+      @count_keys = @count_sort.keys
+      @count_values = @count_sort.values
       @sum = @count_values.inject{ |sum, n| sum + n }
       @yellows = []
       @count_values.each do |value|
         percent = 100 / @sum * value
-        if percent < 21
+        if percent == 0
+          @yellows << "rate-0"
+        elsif percent < 21
           @yellows << "rate-20"
         elsif percent < 41
           @yellows << "rate-40"
