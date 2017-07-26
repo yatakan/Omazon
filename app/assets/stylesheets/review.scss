@@ -26,3 +26,40 @@
     padding-top: 50px;
   }
 }
+
+#review-tables {
+  tr {
+    color: $item-page-link-blue;
+    border-top: solid 10px $page-main-white;
+  }
+  .review-bar {
+    background-color: $review-bar;
+    width: 100px;
+    height: 15px;
+   .rate-20 {
+      background-color: #ffce00;
+      width: 20px;
+      height: 22px;
+    }
+    .rate-40 {
+      background-color: #ffce00;
+      width: 40px;
+      height: 22px;
+    }
+    .rate-60 {
+      background-color: #ffce00;
+      width: 60px;
+      height: 22px;
+    }
+    .rate-80 {
+      background-color: #ffce00;
+      width: 80px;
+      height: 22px;
+    }
+    .rate-100 {
+      background-color: #ffce00;
+      width: 100px;
+      height: 22px;
+    }
+  }
+}

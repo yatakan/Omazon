@@ -2,8 +2,18 @@
   #review
     %h1 カスタマーレビュー
   #review-rates
-    %p 5つ星のうち 4.2
+    %p= average_rate_stars(@reviews)
+    %p= count_reviews(@reviews)
+    %p= average_rate(@reviews)
     = link_to('レビューを書く', new_item_review_path(@item), method: :get)
+    %table#review-tables
+      - if @reviews.present?
+        - @count_keys.zip(@count_values, @yellows).each do |key, value, yellow|
+          %tr
+            %td= "星#{key}つ"
+            %td.review-bar
+              %div{class:"review-yellow #{yellow}"}
+            %td= value
   #customer-review
     %ul
       - @reviews.each do |review|
