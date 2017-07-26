@@ -11,7 +11,7 @@
             .item-detail
               .name= item.name
               .author
-              .review ★★★★★ 690件のカスタマーレビュー
+              .review= average_rate_stars(item.reviews)
               .price
                 .type ペーパーバック
                 .best-price #{item.price}円

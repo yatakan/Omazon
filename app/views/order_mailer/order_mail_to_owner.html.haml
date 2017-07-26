@@ -1,2 +1,6 @@
-%p 注文がありました！！
-/ =render 'carts/carts_just_show'
+%head
+  %style table { border: solid 1px ; padding: 10px ; }
+  %style tr { border: solid 1px ; }
+%body
+  %p ご注文がありました！
+  = render 'order_carts'

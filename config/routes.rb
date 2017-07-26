@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   post '/update_item/:item_id' => 'carts#update_item'
   delete '/delete_item/:item_id' => 'carts#delete_item'
 
+  post '/review_rate' => 'reviews#review_rate'
+
 end

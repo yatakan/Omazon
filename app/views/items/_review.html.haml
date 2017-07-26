@@ -8,9 +8,13 @@
     %ul
       - @reviews.each do |review|
         %li
-          %p= review.rate
-          %p= review.title
-          %p 投稿者#{review.user.name}
-          %p 形式: ペーパーバック Amazonで購入
-          %p= simple_format(review.text)
-          %p コメント  このレビューは参考になりましたか？ はい いいえ  違反を報告
+          %div{class:"#{review.id}"}
+            %p= review_rate_stars(review.rate)
+            %p= review.title
+            %p 投稿者#{review.user.name}
+            %p 形式: ペーパーバック Amazonで購入
+            %p= simple_format(review.text)
+            %p コメント  このレビューは参考になりましたか？
+            %p.review-yes はい
+            %p.review-no いいえ
+            %div{class:"is-this-cool-#{review.id}"} 参考になった数#{review.like}
