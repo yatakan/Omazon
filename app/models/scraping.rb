@@ -5,6 +5,8 @@ class Scraping
   def self.scraping_item
     puts "URLを入力してください"
     input = gets.chomp
+    puts "category_id?"
+    input = gets.to_i
     agent = Mechanize.new
     current_page = agent.get(input)
     name = current_page.at("#productTitle").inner_text if current_page.at("#productTitle")
@@ -13,7 +15,7 @@ class Scraping
     @item.price = 5000
     @item.introduction = current_page.at("#productDescription").inner_text if current_page.at("#productDescription")
     @item.stock = 10
-    @item.category_id = 17
+    @item.category_id = input_id
     if @item.save
       image_url = current_page.at("#imgBlkFront").get_attribute(:src)
       @image = Image.where(image_url: image_url).first_or_initialize
