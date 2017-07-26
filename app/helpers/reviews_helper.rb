@@ -16,6 +16,7 @@ module ReviewsHelper
     if reviews.present?
       rate = reviews.average(:rate).round
       review_rate_stars(rate)
+      content_tag :p, @star, class:"stars"
     else
       content_tag :p, "まだレビューはありません"
     end

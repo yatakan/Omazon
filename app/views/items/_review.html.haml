@@ -19,10 +19,9 @@
       - @reviews.each do |review|
         %li
           %div{class:"#{review.id}"}
-            %p= review_rate_stars(review.rate)
+            %p.stars= review_rate_stars(review.rate)
             %p= review.title
             %p 投稿者#{review.user.name}
-            %p 形式: ペーパーバック Amazonで購入
             %p= simple_format(review.text)
             %p コメント  このレビューは参考になりましたか？
             %p.review-yes はい
