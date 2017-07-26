@@ -1,9 +1,33 @@
-%p お届け先情報入力
-= form_for @address do |f|
-  = f.label :name
-  = f.text_field :name, placeholder:"名前を入力してください"
-  = f.label :tel
-  = f.text_field :tel, placeholder:"電話番号を入力してください"
-  = f.label :address
-  = f.text_field :address, placeholder:"住所を入力してください"
-  = f.submit
+#address-form
+  %p アカウントサービス › お客様のご住所 › 新しい住所
+  %h1 お届け先住所を入力してください。
+  = form_for @address do |f|
+    = f.label :country, value:"国"
+    %br/
+    = f.text_field :country
+    %br/
+    = f.label :name, value:"氏名"
+    %br/
+    = f.text_field :name
+    %br/
+    = f.label :post_cord, value:"郵便番号"
+    %br/
+    = f.text_field :post_cord
+    %br/
+    = f.label :prefecture, value:"都道府県"
+    %br/
+    = f.text_field :prefecture
+    %br/
+    = f.label :address, value:"住所"
+    %br/
+    = f.text_field :address
+    %br/
+    = f.label :company, value:"会社名"
+    %br/
+    = f.text_field :company
+    %br/
+    = f.label :tel, value:"電話番号"
+    %br/
+    = f.text_field :tel
+    %br/
+    = f.submit "住所を追加", class:"submit"

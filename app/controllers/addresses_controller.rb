@@ -31,7 +31,7 @@ class AddressesController < ApplicationController
 
   private
   def address_params
-    params.require(:address).permit(:name, :tel, :address).merge(user_id: current_user.id)
+    params.require(:address).permit(:name, :tel, :address, :country, :post_cord, :prefecture, :company).merge(user_id: current_user.id)
   end
 
   def find_address
