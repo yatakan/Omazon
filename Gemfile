@@ -70,7 +70,7 @@ gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'activerecord-session_store'
-gem 'capistrano-rails-console', require: false
+# gem 'capistrano-rails-console', require: false
 
 gem 'rb-readline'
 
