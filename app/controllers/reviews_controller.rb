@@ -12,7 +12,10 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    Review.create(review_params)
+    @review = Review.new(review_params)
+    @review.title = @review.title.sub(/fuck/, "****")
+    @review.text = @review.text.sub(/fuck/, "****")
+    @review.save
     redirect_to item_path(params[:item_id])
   end
 

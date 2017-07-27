@@ -75,3 +75,4 @@ gem 'capistrano-rails-console', require: false
 gem 'rb-readline'
 
 gem 'mechanize'
+gem 'rails-i18n'

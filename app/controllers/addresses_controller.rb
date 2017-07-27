@@ -9,8 +9,12 @@ class AddressesController < ApplicationController
   end
 
   def create
-    Address.create(address_params)
-    redirect_to_index
+    @address = Address.new(address_params)
+    if @address.save
+      redirect_to_index
+    else
+      render :new
+    end
   end
 
   def edit
@@ -19,8 +23,11 @@ class AddressesController < ApplicationController
 
   def update
     find_address
-    @address.update(address_params)
-    redirect_to_index
+    if @address.update(address_params)
+      redirect_to_index
+    else
+      render :edit
+    end
   end
 
   def destroy

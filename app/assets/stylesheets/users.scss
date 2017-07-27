@@ -1,3 +1,38 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#users-show {
+  margin: 20px;
+  h1 {
+    font-size: 28px;
+  }
+  .menu-boxes {
+    .menu-box {
+      float: left;
+      margin-top: 20px;
+      margin-right: 20px;
+      width: 300px;
+      height: 100px;
+      border: 1px solid $box-border;
+      border-radius: 10px;
+      &:hover {
+        background-color: #eee;
+      }
+      img {
+        width: 70px;
+        padding: 20px;
+        float: left;
+      }
+      h2 {
+        padding-top: 10px;
+      }
+      p {
+        float: left;
+        font-size: 13px;
+        color: $box-font;
+      }
+    }
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+  }
+}

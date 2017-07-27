@@ -1,2 +1,12 @@
-%h1 マイページ
-=link_to 'お届け先情報の管理', addresses_path
+#users-show
+  %h1 アカウントサービス
+  .menu-boxes
+    .menu-box
+      = image_tag 'https://images-na.ssl-images-amazon.com/images/G/09/x-locale/cs/ya/images/Box._CB529917612_.png'
+      %h2 注文履歴
+      %p 配送状況の確認・返品手続き
+    = link_to addresses_path do
+      .menu-box
+        = image_tag 'https://images-na.ssl-images-amazon.com/images/G/09/x-locale/cs/ya/images/address-map-pin._CB529299251_.png'
+        %h2 アドレス帳
+        %p 登録住所の追加・変更
