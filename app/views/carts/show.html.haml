@@ -16,7 +16,7 @@
                 %p.cart-item-name= link_to cart.item.name,item_path(cart.item)
                 %p.cart-stock 在庫あり
                 %div{class:cart.id}
-                  %span.cart-delete 削除
+                  %span.cart-delete.yubi 削除
             %td.cart-each-price{class:"item-number-#{i}"}= cart.item.price
             %td.cart-quantity
               = form_for cart, url:"/update_item/#{cart.item_id}", method: :post do |f|
