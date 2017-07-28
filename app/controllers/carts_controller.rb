@@ -36,7 +36,7 @@ class CartsController < ApplicationController
   end
 
   def delete_item
-    find_shopping(params)
+    find_shopping
     respond_to do |format|
       format.json
     end

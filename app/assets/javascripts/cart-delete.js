@@ -1,6 +1,7 @@
 $(document).on ('turbolinks:load', function() {
   $(".cart-delete").on("click", function(){
     var input = $(this).parent().attr("class");
+    console.log(input);
     if (window.confirm("カートから削除しますか？")) {
       $.ajax({
         url: '/delete_item/' + input,
