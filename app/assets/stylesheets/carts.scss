@@ -27,7 +27,7 @@
       padding: 20px;
       font-size: 17px;
       font-weight: 700;
-      &#cart-image {
+      &.cart-image {
         height: 100px;
         width: 100px;
         img {
@@ -51,12 +51,12 @@
           font-size: 12px;
         }
       }
-      &#cart-price {
+      &.cart-each-price {
         padding-left: 0;
         width: 100px;
         color: $font-cart-red;
       }
-      &#cart-quantity {
+      &.cart-quantity {
         width: 100px;
         select {
           width: 70px;
@@ -82,5 +82,12 @@
     content: "";
     clear: both;
     display: block;
+  }
+}
+
+.cart-delete {
+  color: blue;
+  & {
+    text-decoration: underline;
   }
 }
