@@ -27,12 +27,16 @@ class CartsController < ApplicationController
   end
 
   def update_item
-    @shopping.update(shopping_params)
-    redirect_to current_cart
+    find_shopping
+    if @shopping.update(update_params)
+      respond_to do |format|
+        format.json
+      end
+    end
   end
 
   def delete_item
-    @shopping = Shopping.find(params[:item_id])
+    find_shopping(params)
     respond_to do |format|
       format.json
     end
@@ -47,5 +51,13 @@ class CartsController < ApplicationController
 
   def shopping_params
     params.require(:shopping).permit(:quantity)
+  end
+
+  def update_params
+    params.permit(:quantity)
+  end
+
+  def find_shopping
+    @shopping = Shopping.find(params[:item_id])
   end
 end
