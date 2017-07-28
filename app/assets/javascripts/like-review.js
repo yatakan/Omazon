@@ -14,7 +14,6 @@ $(document).on ('turbolinks:load', function() {
       buildHTML(data)
       var like = ".is-this-cool-" + data.id
       $(like).html( "参考になった数" + data.like );
-      console.log('呼び出し')
     })
     .fail(function(data){
       console.log("失敗");

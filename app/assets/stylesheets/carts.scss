@@ -1,16 +1,32 @@
 #cart-show {
-  caption {
-
-  }
+  width: 600px;
   table {
+    margin: 20px;
+    caption {
+      color: $font-black-color;
+      font-size: 21px;
+    }
+    .tr-top {
+      border: none;
+      color: $box-font;
+      th {
+        font-size: 12px;
+      }
+      .td-quantity {
+        float: right;
+        padding-right: 20px;
+      }
+    }
     tr {
-      border: 1px solid black;
+      border-top: 1px solid $page-nav-border;
     }
     th {
       font-size: 20px;
-
     }
     td {
+      padding: 20px;
+      font-size: 17px;
+      font-weight: 700;
       &#cart-image {
         height: 100px;
         width: 100px;
@@ -19,18 +35,52 @@
           height: auto;
         }
       }
-      &#cart-item {
-        width: 300px;
+      .cart-item {
+        width: 200px;
+        a {
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .cart-stock {
+          color: $font-cart-stock;
+          font-size: 12px;
+        }
+        .cart-delete {
+          font-size: 12px;
+        }
       }
       &#cart-price {
+        padding-left: 0;
         width: 100px;
+        color: $font-cart-red;
       }
       &#cart-quantity {
         width: 100px;
+        select {
+          width: 70px;
+          height: 18px;
+          float: right;
+          font-size: 14px;
+        }
+        input {
+          float: right;
+          font-size: 14px;
+        }
       }
     }
   }
   .price-sum {
-
+    float: right;
+    padding-bottom: 40px;
+    padding-right: 40px;
+    color: $font-cart-red;
+    font-weight: 700;
+  }
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
   }
 }

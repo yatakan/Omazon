@@ -32,8 +32,11 @@ class CartsController < ApplicationController
   end
 
   def delete_item
+    @shopping = Shopping.find(params[:item_id])
+    respond_to do |format|
+      format.json
+    end
     @shopping.destroy
-    redirect_to current_cart
   end
 
   private
