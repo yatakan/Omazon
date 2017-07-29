@@ -21,5 +21,6 @@ class ApplicationController < ActionController::Base
 
   def get_categories
     @categories = Category.all
+    @categories_sub = Category.all.limit(7)
   end
 end

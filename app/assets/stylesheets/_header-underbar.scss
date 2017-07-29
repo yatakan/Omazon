@@ -21,13 +21,11 @@
     #user-controll {
       float: left;
       padding-bottom: 1px;
-      border: solid 1px $page-main-color;
       .none-decoration {
         text-decoration: none;
         color: $page-main-white;
       }
       &:hover {
-      border: solid 1px $item-page-pankuzu;
       border-radius: 2px;
         #dd-user-menu{
           display: inline;

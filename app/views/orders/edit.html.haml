@@ -1,23 +1,24 @@
-- if @shoppings.present?
-  %h1 最終確認です。ご注文内容とご住所をご確認ください。
-  =render 'carts/carts_just_show'
-  #order-new
-    .address-index
-      .address-box
-        %ul
-          %li.address-name #{@address.name}
-          %li #{@address.post_cord}
-          %li  #{@address.prefecture}, #{@address.address}
-          - if @address.company.present?
-            %li #{@address.company}
-          %li #{@address.country}
-          %li 電話番号：#{@address.tel}
-    #order-paytype
-      %h1 支払方法： #{@order.pay_type} : 子供銀行券
-    #user-view.no-margin
-      .new_registar
-        = link_to '注文を確定する', "/orders/#{@order.id}", method: :patch, data: { confirm:"注文を確定しますか？"}, class:"submit-button"
-      %p ボタンを押すと注文します。
-- else
-  %p エラーが発生しました。
-  %p ブラウザで不正な操作をしたか、cookieが無効になっている可能性があります。
+#order-edit
+  - if @shoppings.present?
+    %h1 最終確認です。ご注文内容とご住所をご確認ください。
+    =render 'carts/carts_just_show'
+    #order-new
+      .address-index
+        .address-box
+          %ul
+            %li.address-name #{@address.name}
+            %li #{@address.post_cord}
+            %li  #{@address.prefecture}, #{@address.address}
+            - if @address.company.present?
+              %li #{@address.company}
+            %li #{@address.country}
+            %li 電話番号：#{@address.tel}
+      #order-paytype
+        %h1 支払方法： #{@order.pay_type} : 子供銀行券
+      #user-view.no-margin
+        .new_registar
+          = link_to '注文を確定する', "/orders/#{@order.id}", method: :patch, data: { confirm:"注文を確定しますか？"}, class:"submit-button"
+        %p ボタンを押すと注文します。
+  - else
+    %p エラーが発生しました。
+    %p ブラウザで不正な操作をしたか、cookieが無効になっている可能性があります。

@@ -5,52 +5,30 @@
     %table
       %tr
         %td
-          %div Omazonについて
+          %div 初めての方へ
           %ul
-            %li Omazon情報
-            %li Omazonライフ
-            %li Omazon環境
-            %li Omazon保全
-            %li Omazonサービス
-            %li OmazonWEB
-            %li Omazonです
+            %li= link_to 'アカウント登録する', new_user_registration_path
+            %li= link_to 'ログインする', new_user_session_path
       %tr
         %td
-          %div Omazonについて
+          %div 商品を選ぶ
           %ul
-            %li Omazon情報
-            %li Omazonライフ
-            %li Omazon環境
-            %li Omazon保全
-            %li Omazonサービス
-            %li OmazonWEB
-            %li Omazonです
+            - @categories_sub.each do |category|
+              %li= link_to category.name , category_path(category)
       %tr
         %td
-          %div Omazonについて
+          %div ユーザー管理
           %ul
-            %li Omazon情報
-            %li Omazonライフ
-            %li Omazon環境
-            %li Omazon保全
-            %li Omazonサービス
-            %li OmazonWEB
-            %li Omazonです
+            %li= link_to '住所変更', addresses_path
       %tr
         %td
-          %div Omazonについて
+          %div カート機能
           %ul
-            %li Omazon情報
-            %li Omazonライフ
-            %li Omazon環境
-            %li Omazon保全
-            %li Omazonサービス
-            %li OmazonWEB
-            %li Omazonです
+            %li= link_to 'カートを見る', cart_path(current_cart)
   #select-lang
     .language
       .logo
-        %p Amazon
+        %p Omazon
       .lang-field
         .select-lang
           %select
@@ -61,20 +39,20 @@
     %table
       %tr
         %td
-          %div Audible(オーディブル)
+          %div Omazon
         %td
-          %div アマゾン Webサービス（AWS）
+          %div Omazon
         %td
-          %div Amazon アウトレット
+          %div Omazon
         %td
-          %div Prime Now
+          %div Omazon
         %td
-          %div Book Depository
+          %div Omazon
         %td
-          %div Shopbop
+          %div Omazon
   #footer-bottom
     .element
       .agreement
-        %p 利用規約 | プライバシー規約 | パーソナライズド広告規約
+        %p OMAZON | OMAZON
       .copyright
-        %p &copy;1996-2017, Amazon.com, Inc. or its affiliates
+        %p このサイトはRails初心者が練習で作った目コピです。実際の買い物はできません。

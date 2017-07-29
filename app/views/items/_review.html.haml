@@ -15,15 +15,15 @@
               %div{class:"review-yellow #{yellow}"}
             %td= value
   #customer-review
+    %h1 トップカスタマーレビュー
     %ul
       - @reviews.each do |review|
         %li
           %div{class:"#{review.id}"}
-            %p.stars= review_rate_stars(review.rate)
-            %p= review.title
-            %p 投稿者#{review.user.name}
+            %span.stars= review_rate_stars(review.rate)
+            %span.title= review.title
+            %p.name 投稿者 #{review.user.name}
             %p= simple_format(review.text)
-            %p コメント  このレビューは参考になりましたか？
-            %p.review-yes はい
-            %p.review-no いいえ
-            %div{class:"is-this-cool-#{review.id}"} 参考になった数#{review.like}
+            %p.ask このレビューは参考になりましたか？
+            %p.review-yes.yubi 投票
+            %div.counter{class:"is-this-cool-#{review.id}"} 投票数 #{review.like}

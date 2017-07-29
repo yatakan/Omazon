@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @categories = Category.all
+    @categories_sub = Category.all.limit(7)
   end
 
   def show
