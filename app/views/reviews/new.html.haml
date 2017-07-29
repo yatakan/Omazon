@@ -1,13 +1,16 @@
 #user-view
+  - @review.errors.full_messages.each do |message|
+    %ul
+      %li= message
   %h1 レビューを書く
   = form_for([@item, @review]) do |f|
     = f.label :title
     %br
-    = f.text_field :title
+    = f.text_field :title, placeholder:"18文字以上だと保存されません"
     %br
     = f.label :text
     %br
-    = f.text_area :text, class:"text-box"
+    = f.text_area :text, class:"text-box", placeholder:"あまり書きすぎると省略されます"
     %br
     = f.label :rate
     %br

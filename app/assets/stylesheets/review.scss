@@ -5,16 +5,22 @@
 #item-review {
   padding: 50px;
   #review {
-
+    font-size: 10px;
   }
   #review-rates {
+    font-size: 15px;
   }
   #customer-review {
     ul {
       li {
+        width: 300px;
+        height: 200px;
         float: left;
         font-size: 13px;
-        padding: 10px;
+        padding: 20px;
+        border: dashed 1px $item-page-pankuzu;
+        margin: 20px;
+        border-radius: 5px;
       }
       .stars {
         float: left;
@@ -25,6 +31,10 @@
       }
       .name {
         color: $item-page-pankuzu;
+      }
+      .review-text {
+        overflow: scroll;
+        height: 100px;
       }
       .ask {
         padding-top: 10px;
@@ -56,38 +66,40 @@
   tr {
     color: $item-page-link-blue;
     border-top: solid 10px $page-main-white;
+    font-size: 13px;
   }
   .review-bar {
     background-color: $review-bar;
-    width: 100px;
+    width: 1000px;
     height: 15px;
+    border-radius: 15px;
     .rate-0 {
       width: 0px;
     }
     .rate-20 {
       background-color: #ffce00;
-      width: 20px;
-      height: 22px;
+      width: 200px;
+      height: 24px;
     }
     .rate-40 {
       background-color: #ffce00;
-      width: 40px;
-      height: 22px;
+      width: 400px;
+      height: 24px;
     }
     .rate-60 {
       background-color: #ffce00;
-      width: 60px;
-      height: 22px;
+      width: 600px;
+      height: 24px;
     }
     .rate-80 {
       background-color: #ffce00;
-      width: 80px;
-      height: 22px;
+      width: 800px;
+      height: 24px;
     }
     .rate-100 {
       background-color: #ffce00;
-      width: 100px;
-      height: 22px;
+      width: 1000px;
+      height: 24px;
     }
   }
 }
