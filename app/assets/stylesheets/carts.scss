@@ -37,6 +37,8 @@
       }
       .cart-item {
         width: 200px;
+        overflow: hidden;
+        height: 50px;
         a {
           text-decoration: none;
           &:hover {

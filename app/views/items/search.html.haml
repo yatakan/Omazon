@@ -5,16 +5,18 @@
     #search-result
       %ul
         - @items.each do |item|
-          %li
-            .item-image
-              =link_to image_tag("#{item.image.image_url}"), item_path(item)
-            .item-detail
-              .name= item.name
-              .author
-              .review= average_rate_stars(item.reviews)
-              .price
-                .type ペーパーバック
-                .best-price #{item.price}円
+          .each-item
+            %li
+              .item-image
+                =link_to image_tag("#{item.image.image_url}"), item_path(item)
+              .item-detail
+                .name
+                  %p= item.name
+                .author
+                .review= average_rate_stars(item.reviews)
+                .price
+                  .type ペーパーバック
+                  .best-price #{item.price}円
   - else
     #none-items
       %p 該当する商品は見つかりませんでした。

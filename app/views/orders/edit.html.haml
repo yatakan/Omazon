@@ -2,15 +2,21 @@
   %h1 最終確認です。ご注文内容とご住所をご確認ください。
   =render 'carts/carts_just_show'
   #order-new
-    #order-adress
-      %h1 お届け先：
-      %p 氏名： #{@address.name}
-      %p 電話番号：#{@address.tel}
-      %p 住所：#{@address.address}
+    .address-index
+      .address-box
+        %ul
+          %li.address-name #{@address.name}
+          %li #{@address.post_cord}
+          %li  #{@address.prefecture}, #{@address.address}
+          - if @address.company.present?
+            %li #{@address.company}
+          %li #{@address.country}
+          %li 電話番号：#{@address.tel}
     #order-paytype
-      %h1 支払方法： #{@order.pay_type}
-    #order-decision
-      = link_to '注文を確定する', "/orders/#{@order.id}", method: :patch, data: { confirm:"注文を確定しますか？"}
+      %h1 支払方法： #{@order.pay_type} : 子供銀行券
+    #user-view.no-margin
+      .new_registar
+        = link_to '注文を確定する', "/orders/#{@order.id}", method: :patch, data: { confirm:"注文を確定しますか？"}, class:"submit-button"
       %p ボタンを押すと注文します。
 - else
   %p エラーが発生しました。

@@ -1,28 +1,53 @@
-#order-new
-  - if @addresses.present?
-    = form_for @order do |f|
-      #order-adress
-        %h1 使用する住所：
-        - @addresses.each.with_index(1) do |address, i|
-          - if i == 1
-            = f.radio_button(:address_id, address.id, checked: true)
-            = f.label(:address_id, address.name, value: address.id)
-          - else
-            = f.radio_button(:address_id, address.id)
-            = f.label(:address_id, address.name, value: address.id)
-          %p 電話番号：#{address.tel}
-          %p 住所：#{address.address}
-        %p= link_to '別の住所を登録',  new_address_path
-      #order-paytype
-        %h1 支払方法：
+- if @addresses.present?
+  = form_for @order do |f|
+    .address-index
+      %h1 お届け先住所の選択
+      - @addresses.each.with_index(1) do |address, i|
+        - if i == 1
+          = f.radio_button(:address_id, address.id, checked: true)
+          = f.label(:address_id, address.name, value: address.id)
+          .address-index
+            - @addresses.each do |address|
+              .address-box
+                %ul
+                  %li.address-name #{address.name}
+                  %li #{address.post_cord}
+                  %li  #{address.prefecture}, #{address.address}
+                  - if address.company.present?
+                    %li #{address.company}
+                  %li #{address.country}
+                  %li 電話番号：#{address.tel}
+        - else
+          = f.radio_button(:address_id, address.id)
+          = f.label(:address_id, address.name, value: address.id)
+          - @addresses.each do |address|
+            .address-box
+              %ul
+                %li.address-name #{address.name}
+                %li #{address.post_cord}
+                %li  #{address.prefecture}, #{address.address}
+                - if address.company.present?
+                  %li #{address.company}
+                %li #{address.country}
+                %li 電話番号：#{address.tel}
+    #user-view.no-margin
+      .order-radio
+        %h1 お支払方法
         = f.radio_button(:pay_type, 1, checked: true)
-        = f.label(:pay_type, "子供銀行券", value: 1)
+        = f.label(:pay_type, "お弁当引換券", value: 1)
         = f.radio_button(:pay_type, 2)
-        = f.label(:pay_type, "肩もみ券", value: 2)
+        = f.label(:pay_type, "子供銀行券", value: 2)
         = f.radio_button(:pay_type, 3)
         = f.label(:pay_type, "お手伝い券", value: 3)
-      #order-decision
-        = f.submit '注文確認画面へ進む'
-  - else
-    %p 住所が登録されていません。
-    %p= link_to '今すぐ住所を登録',  new_address_path
+        %p ※どれを選んでも実際の決済はできません。
+        %p ※強制的に子供銀行券が選択されます。
+      .new_registar
+        = f.submit '注文確認画面へ進む', class:"submit-button"
+- else
+  %p まず住所を登録する必要があります。
+  %p 登録後、カート画面からやり直してください。
+  .address-index
+    .address-box
+      = link_to new_address_path, class:"font-center" do
+        .font-center
+          %p 新しい住所を追加

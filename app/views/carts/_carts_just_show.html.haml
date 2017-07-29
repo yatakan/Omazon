@@ -1,15 +1,34 @@
 #cart-show
-  %caption ご注文内容
-  %table
-    %tr
-      %th
-      %th
-      %th 価格
-      %th 数量
-    - @shoppings.each do |shopping|
-      %tr
-        %td#cart-image= link_to image_tag("#{shopping.item.image.image_url}"), item_path(shopping.item)
-        %td#cart-item= link_to shopping.item.name,item_path(shopping.item)
-        %td#cart-price= shopping.item.price
-        %td#cart-quantity= shopping.quantity
-  %p.price-sum 小計 #{@sum}
+  - if @shoppings.present?
+    #show-cart
+      %table{id:"#{@shoppings.length}"}
+        %caption ショッピングカート
+        %tr.tr-top
+          %th
+          %th
+          %th 価格
+          %th.td-quantity 数量
+        - @shoppings.each.with_index(1) do |cart, i|
+          %tr{class:"cart-item-" + cart.id.to_s }
+            %td.cart-image= link_to image_tag("#{cart.item.image.image_url}"), item_path(cart.item)
+            %td
+              .cart-item
+                %p.cart-item-name= link_to cart.item.name,item_path(cart.item)
+                %p.cart-stock 在庫あり
+                %div{class:cart.id}
+                  %span.cart-delete.yubi 削除
+            %td.cart-each-price{class:"item-number-#{i}"}= cart.item.price
+            %td.cart-quantity
+              %div{class:cart.id}
+                =cart.quantity
+      %table.price-sum
+        %tr
+          %td 小計
+          %td
+            %div.cart-price
+              %p #{@sum}
+  - else
+    %p まだカートに何も入っていません。
+    %p 商品ページから「カートに入れる」を押すと、買いたい商品を選ぶことができます。
+    %p カートに入れた商品が表示され、注文画面に進むことができます。
+    = link_to 'トップに戻る', root_path

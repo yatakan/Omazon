@@ -1,4 +1,4 @@
-#address-index {
+.address-index {
   margin: 20px;
   font-size: 13px;
   h1 {
@@ -32,28 +32,5 @@
       clear: both;
       content: "";
       display: block;
-  }
-}
-
-#address-form {
-  text-align: center;
-  .input-form {
-    p {
-      font-size: 13px;
-    }
-    h1 {
-      margin: 20px 0px;
-      font-size: 21px;
-    }
-    label {
-      width: 500px;
-    }
-    input {
-      width: 500px;
-      border-radius: 1px;
-      margin-bottom: 20px;
-    }
-    .submit {
-    }
   }
 }

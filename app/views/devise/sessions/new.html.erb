@@ -19,8 +19,12 @@
       </div>
     <% end -%>
 
-    <div class="actions">
-      <%= f.submit "サインイン" %>
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "パスワードを忘れた場合", new_password_path(resource_name), class:"font-13" %><br />
+    <% end -%>
+
+    <div class="actions new_registar">
+      <%= f.submit "サインイン", class:"submit-button" %>
     </div>
   <% end %>
 

@@ -1,4 +1,4 @@
-#address-index
+.address-index
   アカウントサービス › お客様のご住所
   %h1 住所
   .address-box
@@ -6,8 +6,8 @@
       .font-center
         %p 新しい住所を追加
   - if @addresses.present?
-    .address-box
-      - @addresses.each do |address|
+    - @addresses.each do |address|
+      .address-box
         %ul
           %li.address-name #{address.name}
           %li #{address.post_cord}

@@ -1,11 +1,11 @@
 <div id="user-view">
-  <h2>サインイン</h2>
+  <h2>アカウントを作成</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :name %><br />
+      <%= f.label :name, "名前" %><br />
       <%= f.text_field :name, autofocus: true, placeholder:"ニックネームを入力してください" %>
     </div>
 
@@ -15,22 +15,26 @@
     </div>
 
     <div class="field">
-      <%= f.label :password %>
+      <%= f.label :password, "パスワード" %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder:"最低6文字必要です" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation, "もう一度パスワードを入力してください" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
+    <div class="actions new_registar">
+      <%= f.submit "Omazonアカウントを作成", class:"submit-button" %>
     </div>
   <% end %>
+
+  <div class="agree">
+    <p>サインインすることにより、当社の利用規約およびプライバシー規約に同意したとみなされます。</p>
+    <p>勝手にプライム会員になって3900円引き落とされます。</p>
+  </div>
 
   <%= render "devise/shared/links" %>
 </div>
