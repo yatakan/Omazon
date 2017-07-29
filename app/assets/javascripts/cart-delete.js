@@ -23,7 +23,7 @@ $(document).on ('turbolinks:load', function() {
           $(".cart-price").text(number);
           if ($(".cart-item").length === 0) {
             $("#show-cart").remove();
-            $("#cart-show").html('<p>まだカートに何も入っていません。</p><p>商品ページから「カートに入れる」を押すと、買いたい商品を選ぶことができます。</p><p> カートに入れた商品が表示され、注文画面に進むことができます。</p><a href="/items">トップに戻る</a>')
+            $("#cart-show").html('<div id="nothing-cart"><p>まだカートに何も入っていません。</p><p>商品ページから「カートに入れる」を押すと、買いたい商品を選ぶことができます。</p><p> カートに入れた商品が表示され、注文画面に進むことができます。</p><a href="/items">トップに戻る</a></div>')
           }
         });
       })
