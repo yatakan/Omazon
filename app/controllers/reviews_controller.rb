@@ -15,7 +15,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.title = @review.title.sub(/fuck/, "****")
     @review.text = @review.text.sub(/fuck/, "****")
-    redirect_to item_path(params[:item_id]) if @review.save
+    @review.save
+    redirect_to item_path(params[:item_id])
   end
 
   def edit
