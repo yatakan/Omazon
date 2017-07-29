@@ -1,4 +1,5 @@
 #navbar {
+  @include original_color;
   #nav-belt {
   padding-top: 10px;
   height: 70px;
