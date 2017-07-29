@@ -70,7 +70,7 @@
   }
   .review-bar {
     background-color: $review-bar;
-    width: 1000px;
+    width: 150px;
     height: 15px;
     border-radius: 15px;
     .rate-0 {
@@ -78,28 +78,29 @@
     }
     .rate-20 {
       background-color: #ffce00;
-      width: 200px;
-      height: 24px;
+      width: 30px;
+      height: 19px;
     }
     .rate-40 {
       background-color: #ffce00;
-      width: 400px;
-      height: 24px;
+      width: 50px;
+      height: 19px;
     }
     .rate-60 {
       background-color: #ffce00;
-      width: 600px;
-      height: 24px;
+      width: 80px;
+      height: 19px;
     }
     .rate-80 {
       background-color: #ffce00;
-      width: 800px;
-      height: 24px;
+      width: 110px;
+      height: 19px;
     }
     .rate-100 {
       background-color: #ffce00;
-      width: 1000px;
-      height: 24px;
+      width: 150px;
+      height: 19px;
+      border-radius: 15px;
     }
   }
 }
