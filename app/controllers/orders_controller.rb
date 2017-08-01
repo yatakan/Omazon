@@ -41,13 +41,4 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:address_id, :pay_type).merge(user_id: current_user.id, cart_id: current_cart.id)
   end
 
-  def calc_sum(shoppings)
-    if shoppings.present?
-      sum = 0
-      shoppings.each do |shopping|
-        sum += (shopping.item.price * shopping.quantity).to_i
-      end
-      return sum
-    end
-  end
 end

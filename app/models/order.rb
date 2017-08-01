@@ -5,4 +5,5 @@ class Order < ApplicationRecord
 
   validates :address_id, presence: true
   validates :pay_type, presence: true
+
 end

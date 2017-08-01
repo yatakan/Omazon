@@ -1,14 +1,10 @@
 class CartsController < ApplicationController
   before_action :setup_cart_item!, only: [:add_item, :update_item, :delete_item]
+  include CulcSum
 
   def show
     @shoppings  = current_cart.shoppings
-    if @shoppings.present?
-      @sum = 0
-      @shoppings.each do |cart|
-        @sum += (cart.item.price * cart.quantity)
-      end
-    end
+    @sum = calc_sum(@shoppings)
     @numbers = []
     for num in 1..10 do
       @numbers << num
@@ -20,7 +16,6 @@ class CartsController < ApplicationController
       @shopping = current_cart.shoppings.new(item_id: params[:item_id], quantity: 1)
     else
       @shopping.quantity += 1
-      # @shopping.quantity += params[:quantity].to_i
     end
     @shopping.save
     redirect_to current_cart
