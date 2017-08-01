@@ -15,15 +15,15 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @order = Order.find(params[:id])
+    set_order
     @address = @order.address
     @shoppings  = current_cart.shoppings
     @sum = calc_sum(@shoppings)
   end
 
   def update
+    set_order
     @user = current_user
-    @order = Order.find(params[:id])
     @shoppings = @order.cart.shoppings
     @sum = calc_sum(@shoppings)
     OrderMailer.order_mail_to_user(@user, @order, @shoppings, @sum).deliver
@@ -33,6 +33,10 @@ class OrdersController < ApplicationController
   end
 
   private
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
   def order_params
     params.require(:order).permit(:address_id, :pay_type).merge(user_id: current_user.id, cart_id: current_cart.id)
   end

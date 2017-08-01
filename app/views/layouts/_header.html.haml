@@ -12,7 +12,7 @@
             = submit_tag "検索", class:"submit"
     #nav-main
       %span#nav-category
-        %p カテゴリー
+        %p= link_to 'カテゴリー', categories_path, class:"none-decoration"
         = render 'layouts/dd-category-menu'
       %span#nav-user-menu
         %span#user-controll

@@ -1,3 +1,3 @@
 #address-form
   %p アカウントサービス › お客様のご住所 › 新しい住所
-  = render 'form'
+  = render partial:'form', locals: { address: @address }

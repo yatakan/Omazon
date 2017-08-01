@@ -1,7 +1,10 @@
 #order-edit
   - if @shoppings.present?
     %h1 最終確認です。ご注文内容とご住所をご確認ください。
-    =render 'carts/carts_just_show'
+    - if @shoppings.present?
+      =render partial:'carts/carts_just_show', locals: { shoppings: @shoppings}
+    - else
+      = render 'carts_empty'
     #order-new
       .address-index
         .address-box

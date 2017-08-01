@@ -18,11 +18,11 @@ class AddressesController < ApplicationController
   end
 
   def edit
-    find_address
+    set_address
   end
 
   def update
-    find_address
+    set_address
     if @address.update(address_params)
       redirect_to_index
     else
@@ -31,7 +31,7 @@ class AddressesController < ApplicationController
   end
 
   def destroy
-    find_address
+    set_address
     @address.update(user_id: nil, destroy_at: Time.now)
     redirect_to_index
   end
@@ -41,7 +41,7 @@ class AddressesController < ApplicationController
     params.require(:address).permit(:name, :tel, :address, :country, :post_cord, :prefecture, :company).merge(user_id: current_user.id)
   end
 
-  def find_address
+  def set_address
     @address = Address.find(params[:id])
   end
 

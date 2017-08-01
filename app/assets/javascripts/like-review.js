@@ -13,7 +13,7 @@ $(document).on ('turbolinks:load', function() {
     .done(function(data){
       buildHTML(data)
       var like = ".is-this-cool-" + data.id
-      $(like).html( "参考になった数" + data.like );
+      $(like).html( "投票数" + data.like );
     })
     .fail(function(data){
       console.log("失敗");
