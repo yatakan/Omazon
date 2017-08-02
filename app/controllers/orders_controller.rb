@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  include CulcSum
 
   def index
+    @orders = current_user.orders.where(check_out: true).includes(:cart, :address).page(params[:page]).per(3)
+    @sum = []
+    @orders.each do |order|
+      @sum << calc_sum(order.cart.shoppings)
+    end
   end
 
   def new
@@ -22,13 +28,19 @@ class OrdersController < ApplicationController
   end
 
   def update
+    #メーラーに送る情報
     set_order
     @user = current_user
     @shoppings = @order.cart.shoppings
     @sum = calc_sum(@shoppings)
     OrderMailer.order_mail_to_user(@user, @order, @shoppings, @sum).deliver
     OrderMailer.order_mail_to_owner(@user, @order, @shoppings, @sum).deliver
+
+    #カートを空にして、orderをcheckoutにする
     session[:cart_id] = nil
+    @order.check_out = true
+    @order.order_at = Time.now
+    @order.save
     current_cart
   end
 

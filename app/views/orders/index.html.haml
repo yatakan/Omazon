@@ -1,0 +1,13 @@
+.address-index
+  アカウントサービス › 注文履歴
+  %h1 #{current_user.name} 様のご注文一覧
+  - if @orders.present?
+    - @orders.zip(@sum).each do |order, sum|
+      %hr
+      %h1= order.order_at
+      = render partial:'carts/carts_just_show', locals: { shoppings: order.cart.shoppings, sum: sum }
+    = paginate @orders
+  - else
+    %p お客様の確定したご注文がここに表示されます。
+    %p まだご注文はありません。今すぐOmazonでご注文してみましょう！
+

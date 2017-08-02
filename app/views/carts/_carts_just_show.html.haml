@@ -1,7 +1,7 @@
 #cart-show
   #show-cart
     %table{id:"#{shoppings.length}"}
-      %caption ショッピングカート
+      %caption ご注文内容
       %tr.tr-top
         %th
         %th
@@ -14,8 +14,6 @@
             .cart-item
               %p.cart-item-name= link_to cart.item.name,item_path(cart.item)
               %p.cart-stock 在庫あり
-              %div{class:cart.id}
-                %span.cart-delete.yubi 削除
           %td.cart-each-price{class:"item-number-#{i}"}= cart.item.price
           %td.cart-quantity
             %div{class:cart.id}
@@ -25,4 +23,4 @@
         %td 小計
         %td
           %div.cart-price
-            %p #{@sum}
+            %p #{sum}
