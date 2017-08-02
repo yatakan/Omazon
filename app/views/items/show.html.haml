@@ -20,4 +20,5 @@
       %h2 商品の説明
       %h3 内容紹介
       %p= @item.introduction
-  = render 'review'
+  %h1 トップカスタマーレビュー
+  = render partial:'review', locals: { reviews: @reviews }

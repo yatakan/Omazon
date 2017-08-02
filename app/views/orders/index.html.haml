@@ -4,10 +4,9 @@
   - if @orders.present?
     - @orders.zip(@sum).each do |order, sum|
       %hr
-      %h1= order.order_at
+      %h1= order.order_at.strftime("%Y年 %m月%d日 %H時 %d分")
       = render partial:'carts/carts_just_show', locals: { shoppings: order.cart.shoppings, sum: sum }
     = paginate @orders
   - else
     %p お客様の確定したご注文がここに表示されます。
     %p まだご注文はありません。今すぐOmazonでご注文してみましょう！
-

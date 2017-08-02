@@ -1,0 +1,9 @@
+.address-index
+  アカウントサービス › レビュー
+#item-review
+  %h1 あなたが書いたレビュー
+  - if @reviews.present?
+    = render partial:"items/reviews_index", locals: { reviews: @reviews }
+  - else
+    %p 商品ページから商品の感想を書けます。
+    %p あなたもレビューを書いてみませんか？

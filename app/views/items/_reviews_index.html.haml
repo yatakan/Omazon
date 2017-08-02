@@ -1,0 +1,13 @@
+#customer-review
+  %ul
+    - reviews.each do |review|
+      %li
+        %div{class:"#{review.id}"}
+          %span.stars= review_rate_stars(review.rate)
+          %span.title
+            %span= review.title
+          %p.name 投稿者 #{review.user.name}
+          .review-text= simple_format(review.text)
+          %p.ask このレビューは参考になりましたか？
+          %p.review-yes.yubi 投票
+          %div.counter{class:"is-this-cool-#{review.id}"} 投票数 #{review.like}

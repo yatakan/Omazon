@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   include CulcSum
 
   def index
-    @orders = current_user.orders.where(check_out: true).includes(:cart, :address).page(params[:page]).per(3)
+    @orders = current_user.orders.where(check_out: true).order('order_at DESC').includes(:cart, :address).page(params[:page]).per(3)
     @sum = []
     @orders.each do |order|
       @sum << calc_sum(order.cart.shoppings)

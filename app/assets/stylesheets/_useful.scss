@@ -7,3 +7,11 @@
   cursor: pointer;
   color: white;
 }
+
+hr {
+   border-color: $box-border;
+}
+
+#main-contents {
+  padding-top: 15px;
+}

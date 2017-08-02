@@ -2,29 +2,16 @@
   #review
     %h1 カスタマーレビュー
   #review-rates
-    %p= average_rate_stars(@reviews)
-    %p= count_reviews(@reviews)
-    %p= average_rate(@reviews)
+    %p= average_rate_stars(reviews)
+    %p= count_reviews(reviews)
+    %p= average_rate(reviews)
     = link_to('レビューを書く', new_item_review_path(@item), method: :get)
     %table#review-tables
-      - if @reviews.present?
+      - if reviews.present?
         - @count_keys.zip(@count_values, @yellows).each do |key, value, yellow|
           %tr
             %td= "星#{key}つ"
             %td.review-bar
               %div{class:"review-yellow #{yellow}"}
             %td= value
-  #customer-review
-    %h1 トップカスタマーレビュー
-    %ul
-      - @reviews.each do |review|
-        %li
-          %div{class:"#{review.id}"}
-            %span.stars= review_rate_stars(review.rate)
-            %span.title
-              %span= review.title
-            %p.name 投稿者 #{review.user.name}
-            .review-text= simple_format(review.text)
-            %p.ask このレビューは参考になりましたか？
-            %p.review-yes.yubi 投票
-            %div.counter{class:"is-this-cool-#{review.id}"} 投票数 #{review.like}
+  = render partial:"reviews_index", locals: { reviews: reviews }

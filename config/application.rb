@@ -15,3 +15,7 @@ module Omazon
     end
   end
 end
+
+Rails.application.configure do
+  config.time_zone = 'Tokyo'
+end

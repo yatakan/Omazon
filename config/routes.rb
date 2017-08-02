@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   post '/review_rate' => 'reviews#review_rate'
 
+  get '/reviews' => 'reviews#index'
+
 end
