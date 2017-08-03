@@ -77,3 +77,4 @@ gem 'rb-readline'
 gem 'mechanize'
 gem 'rails-i18n'
 gem 'kaminari'
+gem 'whenever', :require => false

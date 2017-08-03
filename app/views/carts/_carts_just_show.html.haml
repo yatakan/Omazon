@@ -13,7 +13,6 @@
           %td
             .cart-item
               %p.cart-item-name= link_to cart.item.name,item_path(cart.item)
-              %p.cart-stock 在庫あり
           %td.cart-each-price{class:"item-number-#{i}"}= cart.item.price
           %td.cart-quantity
             %div{class:cart.id}

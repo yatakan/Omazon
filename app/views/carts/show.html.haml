@@ -14,7 +14,6 @@
             %td
               .cart-item
                 %p.cart-item-name= link_to cart.item.name,item_path(cart.item)
-                %p.cart-stock 在庫あり
                 %div{class:cart.id}
                   %span.cart-delete.yubi 削除
             %td.cart-each-price{class:"item-number-#{i}"}= cart.item.price

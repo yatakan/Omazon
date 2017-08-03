@@ -12,9 +12,11 @@
       .price
         .type ペーパーバック
         .best-price #{@item.price}円
+      .cart-stock= how_many_stock
     .add-cart
       .add-button
-        %p= link_to 'カートに入れる', "/add_item/#{@item.id}", method: :post
+        - unless @item.stock == 0
+          %p= link_to 'カートに入れる', "/add_item/#{@item.id}", method: :post
   .introduction
     .intro-box
       %h2 商品の説明

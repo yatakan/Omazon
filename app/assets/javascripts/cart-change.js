@@ -9,14 +9,12 @@ $(document).on('turbolinks:load', function() {
       data: input
     })
     .done(function(data){
-      var number = 0
-      for (var i = 1; i <= parseInt($("table").attr("id")) ; i++) {
-        if ($(".item-number-" + i).length) {
-          calc = parseInt($(".select" + i).val()) * parseInt($(".item-number-" + i).text());
-          number = number + calc
-        }
+      if (data.sum === null) {
+        window.alert("在庫が足りません")
+        location.reload();
+      } else {
+      $(".cart-price").text(data.sum);
       }
-      $(".cart-price").text(number);
     })
     .fail(function(data){
       console.log('失敗');
