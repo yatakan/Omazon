@@ -4,32 +4,29 @@
       %h1 お届け先住所の選択
       - @addresses.each.with_index(1) do |address, i|
         - if i == 1
-          = f.radio_button(:address_id, address.id, checked: true)
-          = f.label(:address_id, address.name, value: address.id)
-          .address-index
-            - @addresses.each do |address|
-              .address-box
-                %ul
-                  %li.address-name #{address.name}
-                  %li #{address.post_cord}
-                  %li  #{address.prefecture}, #{address.address}
-                  - if address.company.present?
-                    %li #{address.company}
-                  %li #{address.country}
-                  %li 電話番号：#{address.tel}
+          .address-box
+            = f.radio_button(:address_id, address.id, checked: true)
+            = f.label(:address_id, address.name, value: address.id)
+            %ul
+              %li.address-name #{address.name}
+              %li #{address.post_cord}
+              %li  #{address.prefecture}, #{address.address}
+              - if address.company.present?
+                %li #{address.company}
+              %li #{address.country}
+              %li 電話番号：#{address.tel}
         - else
-          = f.radio_button(:address_id, address.id)
-          = f.label(:address_id, address.name, value: address.id)
-          - @addresses.each do |address|
-            .address-box
-              %ul
-                %li.address-name #{address.name}
-                %li #{address.post_cord}
-                %li  #{address.prefecture}, #{address.address}
-                - if address.company.present?
-                  %li #{address.company}
-                %li #{address.country}
-                %li 電話番号：#{address.tel}
+          .address-box
+            = f.radio_button(:address_id, address.id)
+            = f.label(:address_id, address.name, value: address.id)
+            %ul
+              %li.address-name #{address.name}
+              %li #{address.post_cord}
+              %li  #{address.prefecture}, #{address.address}
+              - if address.company.present?
+                %li #{address.company}
+              %li #{address.country}
+              %li 電話番号：#{address.tel}
     #user-view.no-margin
       .order-radio
         %h1 お支払方法
