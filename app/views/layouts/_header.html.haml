@@ -8,7 +8,7 @@
         #nav-input
           = select_tag :category, options_from_collection_for_select(Category.all, :id, :name), prompt:"すべてのカテゴリー"
           .input
-            = text_field_tag :keyword
+            = text_field_tag :keyword, "", :placeholder => "例：ヘミングウェイ"
             = submit_tag "検索", class:"submit"
     #nav-main
       %span#nav-category
