@@ -4,10 +4,7 @@ class CartsController < ApplicationController
 
   def show
     @sum = calc_sum(set_shoppings)
-    @numbers = []
-    for num in 1..30 do
-      @numbers << num
-    end
+    @numbers = (1..30).to_a
   end
 
   def add_item

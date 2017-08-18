@@ -1,15 +1,18 @@
 <div id="user-view">
   <h2>サインイン</h2>
+  <p>こちらのアカウントでもログインできます</p>
+  <p>otameshi@otameshi</p>
+  <p>otameshi</p>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email, "Eメール" %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true, placeholder:"otameshi@otameshi" %>
     </div>
 
     <div class="field">
       <%= f.label :password, "パスワード" %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder:"otameshi" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
