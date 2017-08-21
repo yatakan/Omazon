@@ -1,4 +1,10 @@
 $(document).on('turbolinks:load', function() {
+  var stars = $('.select-stars').val();
+  console.log(stars)
+  for(i = 1; i <= stars; i++){
+    console.log("何回よばれた？")
+    $(".star-" + i).text("★")
+  }
   $(".star-1").on("click",
     function(){
      $(this).text("★");
