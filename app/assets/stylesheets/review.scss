@@ -104,3 +104,24 @@
     }
   }
 }
+
+.select-stars {
+  display: none;
+}
+
+.all-stars {
+  margin: 0 auto;
+  width: 150px;
+}
+
+.all-stars:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.star {
+  float: left;
+  font-size: 30px;
+  color: $review-yellow;
+}

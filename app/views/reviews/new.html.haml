@@ -4,16 +4,22 @@
       %li= message
   %h1 レビューを書く
   = form_for([@item, @review]) do |f|
-    = f.label :title
+    = f.label :title, "レビュータイトル"
     %br
-    = f.text_field :title, placeholder:"18文字以上だと保存されません"
+    = f.text_field :title, placeholder:"例：おもしろかった！"
     %br
-    = f.label :text
+    = f.label :text, "内容"
     %br
-    = f.text_area :text, class:"text-box", placeholder:"あまり書きすぎると省略されます"
+    = f.text_area :text, class:"text-box", placeholder:"例：ぜんぜんいみがわからないけれど、なんとなくおもしろいとおもった。"
     %br
-    = f.label :rate
+    = f.label :rate, "評価"
     %br
-    = f.text_field :rate, placeholder:"1〜5の半角数字で入力してください"
+    = f.text_field :rate, class:"select-stars"
+    .all-stars
+      %span.star-1.star ☆
+      %span.star-2.star ☆
+      %span.star-3.star ☆
+      %span.star-4.star ☆
+      %span.star-5.star ☆
     %br
     .new_registar= f.submit "レビューを投稿する", class:"submit-button"
