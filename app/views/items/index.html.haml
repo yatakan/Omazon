@@ -7,3 +7,12 @@
   %h1 カテゴリーから商品を選ぶ
   - @categories.each do |category|
     =link_to category.name , category_path(category)
+  .weather
+    %h1 天気が気になりますか？
+    %form.form-inline#weather-form
+      %input.form-control#weather-form-city{placeholder:"Tokyo"}
+      %button{type:"submit", class:"btn btn-primary"} 現在の天気
+    #result-city-name.test
+    #result-temp
+    #result-weather
+    #result-dateTime
