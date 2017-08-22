@@ -4,8 +4,8 @@
 ===================================*/
 .bx-wrapper {
   position: relative;
+  margin-bottom: 60px;
   padding: 0;
-  margin: 0;
   *zoom: 1;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
@@ -28,13 +28,16 @@ ul.bxslider {
 /** THEME
 ===================================*/
 .bx-wrapper {
-  background: #232f3e;
-  margin: 0;
-  padding: 0;
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: 5px solid #fff;
+  background: #fff;
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
+  bottom: -30px;
   width: 100%;
 }
 /* LOADER */
@@ -55,6 +58,7 @@ ul.bxslider {
   font-family: Arial;
   font-weight: bold;
   color: #666;
+  padding-top: 20px;
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #666;
@@ -62,6 +66,7 @@ ul.bxslider {
   display: block;
   width: 10px;
   height: 10px;
+  margin: 0 5px;
   outline: 0;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -103,6 +108,7 @@ ul.bxslider {
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
+  margin-top: -16px;
   outline: 0;
   width: 32px;
   height: 32px;
@@ -123,6 +129,7 @@ ul.bxslider {
   height: 11px;
   outline: 0;
   background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
 }
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active,
@@ -136,6 +143,7 @@ ul.bxslider {
   height: 11px;
   outline: 0;
   background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
 }
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active,
@@ -165,4 +173,93 @@ ul.bxslider {
   font-family: Arial;
   display: block;
   font-size: .85em;
+  padding: 10px;
+}
+
+.bx-wrapper {
+     position: relative;
+     margin: 0 auto 30px;
+     padding: 0;
+     *zoom: 1;
+     height:120px;
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+     position: absolute;
+     width: 100%;
+}
+
+/* Pager部分 */
+
+.bx-wrapper .bx-pager {
+     text-align: center;
+     font-size: .85em;
+     font-family: Arial;
+     font-weight: bold;
+     color: #666;
+     padding-top: 5px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+     display: inline-block;
+     *zoom: 1;
+     *display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+     background: #fba4c1;
+     text-indent: -9999px;
+     display: block;
+     width: 10px;
+     height: 10px;
+     margin: 0 5px;
+     outline: 0;
+     -moz-border-radius: 5px;
+     -webkit-border-radius: 5px;
+     border-radius: 5px;
+}
+
+
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+     background: #de094f;
+}
+
+/*「Next」と「Prev」 */
+
+.bx-wrapper .bx-prev {
+     left: -30px;
+     padding-left:5px;
+}
+
+.bx-wrapper .bx-next {
+     right: -30px;
+     padding-left:5px;
+}
+
+.bx-wrapper .bx-prev:hover {
+     background-position: 0 0;
+}
+
+.bx-wrapper .bx-next:hover {
+     background-position: -43px 0;
+}
+
+.bx-wrapper .bx-controls-direction a {
+     position: absolute;
+     outline: 0;
+     width:20px;
+     height: 120px;
+     top:0;
+     text-decoration: none;
+     line-height: 120px;
+     font-size: 15px;
+     color:#898989;
+     z-index: 9999;
+     background: #dcdcdc;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+     display: none;
 }

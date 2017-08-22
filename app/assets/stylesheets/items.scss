@@ -20,23 +20,8 @@
   padding: 20px;
 }
 
-#index-item {
-  white-space: nowrap;
-  overflow: scroll;
-  height: 250px;
-  border-bottom: 1px solid $page-nav-border;
-  .item {
-    float: left;
-    height: 300px;
-    img {
-      width: 150px;
-    }
-    .index-item-name {
-      width: 150px;
-      overflow: hidden;
-    }
-    p {
-      font-size: 13px;
-    }
+.recomend-items {
+  img {
+    width: 150px;
   }
 }

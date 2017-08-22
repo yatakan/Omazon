@@ -1,30 +1,25 @@
 #pageContents
-  %ul.bxslider
+  %ul.bxslider.bx1
     %li= image_tag "https://images-fe.ssl-images-amazon.com/images/G/09/kindle/merch/2017/GW/fallback/Fire-gw_NoPrice3000x600._CB507011319_.jpg", width:"100%", height:"300px"
     %li= image_tag "https://images-fe.ssl-images-amazon.com/images/G/09/2017/fashion/01_xfsn/07July/GW/PC_Hero_SALE_3000x600._CB505650808_.jpg", width:"100%", height:"300px"
     %li= image_tag "https://images-fe.ssl-images-amazon.com/images/G/09/Digital_Video/GW_HERO/GW_MULTIPACKS_HARDOFFER_3000x600_V4._CB509000342_.jpg", width:"100%", height:"300px"
-#categories
-  %h1 カテゴリーから商品を選ぶ
-  - @categories.each do |category|
-    =link_to category.name , category_path(category)
-.weather
-  %h1 天気が気になりますか？
-  %form.form-inline#weather-form
-    %input.form-control#weather-form-city{placeholder:"Tokyo"}
-    %button{type:"submit", class:"btn btn-primary"} 現在の天気
-  #result-city-name.test
-  #result-temp
-  #result-weather
-  #result-dateTime
-.weather
-  %h1 あなたへのおすすめ商品
-  - if @items.present?
-    #index-item
-      %ul
-        - @items.each do |item|
-          .item
-            %li
-              .item-image
-                =link_to image_tag("#{item.image.image_url}"), item_path(item)
-              .index-item-name
-                %p= item.name
+  #categories
+    %h1 カテゴリーから商品を選ぶ
+    - @categories.each do |category|
+      =link_to category.name , category_path(category)
+  .weather
+    %h1 天気が気になりますか？
+    %form.form-inline#weather-form
+      %input.form-control#weather-form-city{placeholder:"Tokyo"}
+      %button{type:"submit", class:"btn btn-primary"} 現在の天気
+    #result-city-name.test
+    #result-temp
+    #result-weather
+    #result-dateTime
+  .recomend-items
+    %h1 あなたへのおすすめ商品
+    - if @items.present?
+      #index-item
+        %ul.bxslider.bx2
+          - @items.each do |item|
+            %li= link_to image_tag("#{item.image.image_url}"), item_path(item)
