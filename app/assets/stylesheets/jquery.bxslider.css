@@ -249,14 +249,15 @@ ul.bxslider {
      position: absolute;
      outline: 0;
      width:20px;
-     height: 120px;
      top:0;
      text-decoration: none;
      line-height: 120px;
      font-size: 15px;
      color:#898989;
      z-index: 9999;
-     background: #dcdcdc;
+     height: 50px;
+     margin: 80px -5px;
+     background-color: #DFFFFE;
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {
